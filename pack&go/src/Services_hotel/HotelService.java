@@ -61,8 +61,9 @@ public class HotelService implements service<Hotels> {
         }
         return hotels;
     }
-public List<Hotels> modifier( int id , String categorie ,String equipement ){
-        List<Hotels> packs = new ArrayList<>();
+    @Override
+    public List<Hotels> modifier( int id , String categorie ,String equipement ){
+        List<Hotels> h = new ArrayList<>();
          try {
              String req="UPDATE hotels SET categorie='"+categorie
                      +"', equipement='"+equipement
@@ -74,7 +75,7 @@ public List<Hotels> modifier( int id , String categorie ,String equipement ){
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return packs;
+        return h;
 }
    /* @Override
     public List<Hotels> modifier(String nom) throws SQLException {
