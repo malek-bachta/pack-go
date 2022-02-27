@@ -32,7 +32,7 @@ public class HotelService implements service<Hotels> {
 
     @Override
     public void ajouter(Hotels h) throws SQLException {
-        
+
         String req = "INSERT INTO `hotels` ( `nomH`, `categorie`, `adresse`, `email`, `telH`, `equipement`) VALUES"
                 + " ('" + h.getNomH() + "', '" + h.getCategorie() + "', '" + h.getAdresse() + "', '" + h.getEmail()
                 + "', '" + h.getTelH() + "', '" + h.getEquipement() + "');";
@@ -61,23 +61,25 @@ public class HotelService implements service<Hotels> {
         }
         return hotels;
     }
+
     @Override
-    public List<Hotels> modifier( int id , String categorie ,String equipement ){
+    public List<Hotels> modifier(int id, String categorie, String equipement) {
         List<Hotels> h = new ArrayList<>();
-         try {
-             String req="UPDATE hotels SET categorie='"+categorie
-                     +"', equipement='"+equipement
-                     +"' WHERE idH ="+id;
-          
-             PreparedStatement pre=connexion.prepareStatement(req);
+        try {
+            String req = "UPDATE hotels SET categorie='" + categorie
+                    + "', equipement='" + equipement
+                    + "' WHERE idH =" + id;
+            PreparedStatement pre = connexion.prepareStatement(req);
             pre.executeUpdate();
+            
             System.out.println("hotel Modifiée");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return h;
-}
-   /* @Override
+    }
+
+    /* @Override
     public List<Hotels> modifier(String nom) throws SQLException {
         List<Hotels> hotels = new ArrayList<>();
         String aff = "SELECT `nomH`, `categorie`, `equipement` FROM `hotels`";
@@ -104,7 +106,7 @@ public class HotelService implements service<Hotels> {
         }
         return hotels;
     }
-*/
+     */
     @Override
     public void supprimer(int id) throws SQLException {
         String req = "DELETE FROM hotels WHERE  idH=" + id;

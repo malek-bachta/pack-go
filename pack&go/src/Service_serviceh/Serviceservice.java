@@ -63,12 +63,12 @@ public class Serviceservice implements service<Services> {
     public List<Services> modifier( int id , String formule ,float prix ,String sejours, String activite, String etat ){
         List<Services> s = new ArrayList<>();
          try {
-             String req="UPDATE hotels SET formule='"+formule
-                     +"', prix='"+prix
-                     +"', sejours='"+sejours
-                     +"', activite='"+activite
-                     +"', etat='"+etat
-                     +"' WHERE idH ="+id;
+             String req="UPDATE services SET formule='"+formule
+                     +"', prix='" + prix
+                     +"', sejours='" + sejours
+                     +"', activite='" + activite
+                     +"', etat='" + etat
+                     +"' WHERE idS =" + id;
           
              PreparedStatement pre=connexion.prepareStatement(req);
             pre.executeUpdate();
