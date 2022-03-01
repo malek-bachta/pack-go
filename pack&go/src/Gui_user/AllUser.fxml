@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="610.0" prefWidth="789.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AcceuilAdminController">
+   <children>
+      <AnchorPane prefHeight="611.0" prefWidth="791.0">
+         <children>
+            <TableView fx:id="table" layoutX="36.0" layoutY="174.0" prefHeight="200.0" prefWidth="707.0">
+              <columns>
+                <TableColumn fx:id="nom" prefWidth="146.0" text="First Name" />
+                <TableColumn fx:id="prenom" prefWidth="125.0" text="Last Name" />
+                  <TableColumn fx:id="tel" prefWidth="98.0" text="Phone" />
+                  <TableColumn fx:id="mail" prefWidth="107.0" text="Mail" />
+                  <TableColumn fx:id="age" prefWidth="127.0" text="Age" />
+                  <TableColumn fx:id="pasport" prefWidth="103.0" text="Passport" />
+              </columns>
+            </TableView>
+            <Label layoutX="346.0" layoutY="76.0" text="All Users" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
