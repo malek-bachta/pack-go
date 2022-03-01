@@ -5,7 +5,7 @@
  */
 package Service_guide;
 
-import entities.Transport;
+import Entities_transport.Transport;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
