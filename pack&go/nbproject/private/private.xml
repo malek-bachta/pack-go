@@ -3,7 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/mbach/Desktop/GAMES/pack&amp;go/src/pack/go/PackGo.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Utils/MyDB.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Services_hotel/HotelService.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_hotel/AfficheController.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Entities_serviceh/Services.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_hotel/ajout.fxml</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_hotel/AjoutController.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/test/PackGo.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Service_serviceh/Serviceservice.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_hotel/test.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/gui/AjoutController.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_hotel/affiche.fxml</file>
         </group>
     </open-files>
 </project-private>
