@@ -11,14 +11,19 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.BoxBlur;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -44,6 +49,12 @@ public class AjoutController implements Initializable {
     private Button add;
     @FXML
     private Button show_list;
+    @FXML
+    private AnchorPane ajout;
+    @FXML
+    private Button add_service;
+    @FXML
+    private Button modify;
 
     /**
      * Initializes the controller class.
@@ -51,34 +62,58 @@ public class AjoutController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void add_persom(ActionEvent event) {
-         String name = nameH.getText();
-        String gategory = categoryH.getText();
-        String adress = adressH.getText();
-        String email = this.email.getText();
-        int tel = Integer.parseInt(telH.getText());
-        String equipment = equipement.getText();
+        if ((nameH.getText().isEmpty() == false)
+                && (categoryH.getText().isEmpty() == false)
+                && (adressH.getText().isEmpty() == false)
+                && (verif_adress()) && (verif_phone()) && (verif_mail())
+                && (equipement.getText().isEmpty() == false)) {
+            String name = nameH.getText();
+            String gategory = categoryH.getText();
+            String adress = adressH.getText();
+            String email = this.email.getText();
+            int tel = Integer.parseInt(telH.getText());
+            String equipment = equipement.getText();
 
-        Hotels h = new Hotels(name, gategory, adress, email, tel, equipment);
-        HotelService hs = new HotelService();
+            Hotels h = new Hotels(name, gategory, adress, email, tel, equipment);
+            HotelService hs = new HotelService();
 
-        try {
-            hs.ajouter(h);
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            try {
+                hs.ajouter(h);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success");
+                alert.setContentText("Hotel is added successfully!");
+                alert.show();
+
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        } else {
+
+            BoxBlur blur = new BoxBlur(3, 3, 3);
+            ajout.setEffect(blur);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Repetez svp");
+            alert.setHeaderText("champs non validés");
+            alert.setContentText("Verifiez vos champs svp!!");
+            alert.showAndWait();
+            ajout.setEffect(null);
+            System.out.println("nest pas possible");
+
         }
+
     }
 
     private void initialize(ActionEvent event) {
-       
+
     }
 
     @FXML
     private void show_list(ActionEvent event) {
-         Parent root;
+        Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("affiche.fxml"));
             Stage myWindow = (Stage) show_list.getScene().getWindow();
@@ -91,5 +126,110 @@ public class AjoutController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
-    
+
+    @FXML
+    private Boolean verif_name(ActionEvent event) {
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(adressH.getText());
+        if (m.find() && m.group().equals(adressH.getText())) {
+            return true;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("ERROR");
+            alert.setHeaderText(null);
+            alert.setContentText("Wrong Imput Hotel name !!");
+            alert.showAndWait();
+            return false;
+        }
+
+    }
+
+    @FXML
+    private Boolean verif_category(ActionEvent event) {
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(adressH.getText());
+        if (m.find() && m.group().equals(adressH.getText())) {
+            return true;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("ERROR");
+            alert.setHeaderText(null);
+            alert.setContentText("Wrong Imput in Category!!");
+            alert.showAndWait();
+            return false;
+        }
+    }
+
+    @FXML
+
+    private boolean verif_adress() {
+
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(adressH.getText());
+        if (m.find() && m.group().equals(adressH.getText())) {
+            return true;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("ERROR");
+            alert.setHeaderText(null);
+            alert.setContentText("Wrong Imput in Adress !!");
+            alert.showAndWait();
+            return false;
+        }
+    }
+
+    @FXML
+
+    private boolean verif_mail() {
+        Pattern p = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+        Matcher m = p.matcher(email.getText());
+
+        if (m.find() && m.group().equals(email.getText())) {
+            return true;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("ERROR");
+            alert.setHeaderText(null);
+            alert.setContentText("Wrong Imput in Email!!");
+            alert.showAndWait();
+            return false;
+        }
+    }
+
+    @FXML
+    private boolean verif_phone() {
+        Pattern p = Pattern.compile("[2-9]{1}[0-9]{7}$");
+        Matcher m = p.matcher(telH.getText());
+
+        if (m.find() && m.group().equals(telH.getText())) {
+            return true;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("ERROR");
+            alert.setHeaderText(null);
+            alert.setContentText("Wrong Imput in Phone Number !!");
+            alert.showAndWait();
+            return false;
+        }
+    }
+
+    @FXML
+    private void add_service(ActionEvent event) {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/Gui_serviceh/AjoutService.fxml"));
+            Stage myWindow = (Stage) show_list.getScene().getWindow();
+            Scene sc = new Scene(root);
+            myWindow.setScene(sc);
+            myWindow.setTitle("page name");
+            //myWindow.setFullScreen(true);
+            myWindow.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void modify(ActionEvent event) {
+    }
 }

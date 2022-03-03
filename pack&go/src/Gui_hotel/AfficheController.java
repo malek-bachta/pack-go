@@ -9,23 +9,30 @@ import Entities_hotel.Hotels;
 import Services_hotel.HotelService;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLDataException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  * FXML Controller class
@@ -34,7 +41,7 @@ import javafx.stage.Stage;
  */
 public class AfficheController implements Initializable {
 
-  @FXML
+    @FXML
     private TableView<Hotels> table;
     @FXML
     private TableColumn<Hotels, Integer> idH;
@@ -50,13 +57,13 @@ public class AfficheController implements Initializable {
     private TableColumn<Hotels, Integer> tel;
     @FXML
     private TableColumn<Hotels, String> equipment;
+    @FXML
     private Button add;
     @FXML
     private Button delete;
 
     private ObservableList<Hotels> userData = FXCollections.observableArrayList();
     HotelService hs = new HotelService();
-
 
     /**
      * Initializes the controller class.
@@ -95,10 +102,10 @@ public class AfficheController implements Initializable {
             System.out.println(ex.getMessage());
         }
         // TODO
-    }    
+    }
 
     @FXML
-    private void back_add(ActionEvent event) {
+    private void back_to_add(ActionEvent event) {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("ajout.fxml"));
@@ -113,8 +120,24 @@ public class AfficheController implements Initializable {
         }
     }
 
+    public static int idho;
+
     @FXML
-    private void delete(ActionEvent event) {
+    private void delete(ActionEvent event) throws SQLException {
+
+        Hotels h = (Hotels) table.getSelectionModel().getSelectedItem();
+        idho = h.getIdH();
+        hs.supprimer(idho);
+        resetTableData();
+
     }
+
+    public void resetTableData() throws SQLDataException, SQLException {
+        List<Hotels> h = new ArrayList<>();
+        h = hs.afficher();
+        ObservableList<Hotels> data = FXCollections.observableArrayList(h);
+        table.setItems(data);
+    }
+
     
 }

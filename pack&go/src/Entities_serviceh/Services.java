@@ -37,6 +37,10 @@ public class Services {
         this.etat = etat;
     }
 
+    public Services(String formula, String sejours, float prix, String activite, String dispoo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getIdS() {
         return idS;
     }
