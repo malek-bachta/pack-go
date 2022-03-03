@@ -24,6 +24,14 @@ public class packs {
      public packs() {
     }
 
+    public packs(String nom_pack, String texte, String service, String guide, String destination) {
+        this.nom_pack = nom_pack;
+        this.texte = texte;
+        this.service = service;
+        this.guide = guide;
+        this.destination = destination;
+    }
+
 
 
    

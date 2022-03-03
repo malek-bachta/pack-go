@@ -3,7 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/mbach/Desktop/GAMES/pack&amp;go/src/pack/go/PackGo.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Entities_pack/packs.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_pack/packs.fxml</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Service_pack/Servicepack.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_offre/OffreController.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Service_pack/Iservice.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_pack/AfficherpackController.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_pack/PacksController.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_pack/afficherpack.fxml</file>
         </group>
     </open-files>
 </project-private>

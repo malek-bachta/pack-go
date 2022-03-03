@@ -5,6 +5,7 @@
  */
 package Service_offre;
 
+
 import Entities_offre.offre;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,21 +27,28 @@ public abstract class Serviceoffre implements Iservice<offre> {
     
     public Serviceoffre()
     {
-        cnx= MyDB.getInstance().getConnexion();
+        cnx= 
+                MyDB.getInstance().getConnexion();
     }
 
     @Override
     public void ajouter(offre O) throws SQLException{
-       String req="INSERT INTO `offre`( `budget`) VALUES ("+O.getBudget()+");";
+       String req="INSERT INTO `offre`( `budget`,`nom_offre`) VALUES ("+O.getBudget()+",'"+ O.getNom_offre()+"');";
         Statement st=cnx.createStatement();
         st.executeUpdate(req);
       
     }
+    
+    
+    
+    
+    
 
        public void ajouter1(offre O) throws SQLException{
        String req="INSERT INTO `offre`(`offre`) VALUES ( ?);";
          PreparedStatement pre=cnx.prepareStatement(req);
-         pre.setInt(1, O.getBudget());
+         pre.setString(1, O.getNom_offre());
+         pre.setInt(2, O.getBudget());
          pre.executeUpdate(req);
            System.out.println("success!");
         
@@ -85,8 +93,10 @@ public abstract class Serviceoffre implements Iservice<offre> {
         ResultSet rst = st.executeQuery(req);
 
         while (rst.next()) {
-            offre f = new offre(rst.getInt("id_of"),//or rst.getInt(1)
-                    rst.getInt("budget"));
+            offre f = new offre(rst.getInt("id_of"),
+                    rst.getInt("budget"),
+                                rst.getString("nom_offre")
+);
             offre.add(f);
         }
         return offre;
@@ -106,11 +116,12 @@ public abstract class Serviceoffre implements Iservice<offre> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
      
-public List<offre> modifierOffre(int id_of , int budget ){
+public List<offre> modifierOffre(int id_of , int budget,String nom_offre ){
         List<offre> offre = new ArrayList<>();
          try {
              String req="UPDATE offre SET budget='"+budget
-                     +"' WHERE id_of =" +id_of;
+                     +"' , nom_offre='"+nom_offre
+                     +"'WHERE id_of =" +id_of;
              
              PreparedStatement pre=cnx.prepareStatement(req);          
             pre.executeUpdate();
@@ -120,25 +131,12 @@ public List<offre> modifierOffre(int id_of , int budget ){
         }
         return offre;
 }  
-       
-       
-       
-       
-       
-       
-    
+ 
 
   public List<offre> Tri() throws SQLException {
         Comparator<offre> comparator = Comparator.comparing(offre::getBudget);
         List<offre> offre = afficheroffre();
         return offre.stream().sorted(comparator).collect(Collectors.toList());
     }
-
-  
-  
-  /*public List<offre> Recherche(offre o) throws SQLException {
-        List<offre> offre = afficheroffre();
-        return offre.stream().filter(b -> b.getBudget().equals(o.getBudget())).collect(Collectors.toList());
-    }
- */
+ 
 }

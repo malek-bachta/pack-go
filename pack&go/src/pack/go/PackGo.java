@@ -1,6 +1,3 @@
-
-
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,55 +5,39 @@
  */
 package pack.go;
 
-import Entities_offre.offre;
-import Entities_pack.packs;
-import Service_offre.Serviceoffre;
-import Service_pack.Servicepack;
-import java.sql.SQLException;
-import utils.MyDB;
-
+import java.io.IOException;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  *
- * @author THEOLDISBACK
+ * @author MSI
  */
-public class PackGo {
+public class PackGo extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Gui_offre/offre.fxml"));
+
+            Scene scene = new Scene(root);
+
+            primaryStage.setTitle("offre!");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 
     /**
      * @param args the command line arguments
-     * @throws java.sql.SQLException
      */
-    public static void main(String[] args) throws SQLException {
-                MyDB db1 =MyDB.getInstance();
-
-          System.out.println(db1.hashCode());
-          
-
-          offre f1=new offre(1,1000);
-                    offre f3=new offre(1,6600);
-
-         packs p1=new packs(2,"mmmmm","ammmaa","snnnnsss","dddd","wwwwww");
-          
-
-         Servicepack Pa = new Servicepack() {};
-     
-          Serviceoffre of = new Serviceoffre() {};
-          
-          try {
-           of.modifierOffre( 32,1919);
-             of.suprimerOffre(39);
-                          System.out.println(of.afficheroffre());
-             
-                          System.out.println(of.Tri());
-                          Pa.ajouter(p1);
-                        Pa.suprimerPack(25);
-                         Pa.modifierPack( 221,"aziz","aziz","bachta","bachta","aziz");
-                      System.out.println(Pa.afficherpacks());
-              
-
-        } catch (SQLException e) {
-              System.out.println(e.getMessage());
-        }
+    public static void main(String[] args) {
+        launch(args);
     }
-    
+
 }
