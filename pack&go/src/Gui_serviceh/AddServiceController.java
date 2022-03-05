@@ -35,7 +35,7 @@ import javafx.stage.Stage;
  *
  * @author mbach
  */
-public class AjoutServiceController implements Initializable {
+public class AddServiceController implements Initializable {
 
     @FXML
     private Button add;

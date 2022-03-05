@@ -49,12 +49,12 @@ public class ModifyServiceController implements Initializable {
     @FXML
     private Button modif;
     @FXML
-    private Button add_hotel;
-    @FXML
     private TextField disponibility;
 
     Services s = new Services();
     List<Services> liste = new ArrayList<>();
+    @FXML
+    private Button add_service;
 
     /**
      * Initializes the controller class.
@@ -120,16 +120,16 @@ public class ModifyServiceController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
-
-    @FXML
-    private void add_hotel(ActionEvent event) {
+@FXML
+  
+    private void add_service(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/Gui_hotel/ajout.fxml"));
-            Stage myWindow = (Stage) show_service.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("AddService.fxml"));
+            Stage myWindow = (Stage) add_service.getScene().getWindow();
             Scene sc = new Scene(root);
             myWindow.setScene(sc);
-            myWindow.setTitle("Hotels List");
+            myWindow.setTitle("Service List");
             //myWindow.setFullScreen(true);
             myWindow.show();
         } catch (IOException ex) {
@@ -217,4 +217,6 @@ public class ModifyServiceController implements Initializable {
             return false;
         }
     }
+
+    
     }

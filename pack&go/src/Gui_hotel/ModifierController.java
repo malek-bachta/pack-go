@@ -56,11 +56,11 @@ public class ModifierController implements Initializable {
     @FXML
     private Button modify;
     @FXML
-    private Button add_service;
-    @FXML
     private AnchorPane ajout;
     Hotels pdetails = new Hotels();
     List<Hotels> liste = new ArrayList<>();
+    @FXML
+    private Button add_hotel;
 
     /**
      * Initializes the controller class.
@@ -127,16 +127,16 @@ public class ModifierController implements Initializable {
         }
 
     }
-
-    @FXML
-    private void add_service(ActionEvent event) {
+  @FXML
+    
+    private void add_hotel(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/Gui_serviceh/AjoutService.fxml"));
-            Stage myWindow = (Stage) show_list.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("ajout.fxml"));
+            Stage myWindow = (Stage) add_hotel.getScene().getWindow();
             Scene sc = new Scene(root);
             myWindow.setScene(sc);
-            myWindow.setTitle("Add Hotel Service");
+            myWindow.setTitle("Add Hotel ");
             //myWindow.setFullScreen(true);
             myWindow.show();
         } catch (IOException ex) {
@@ -229,5 +229,7 @@ public class ModifierController implements Initializable {
             return false;
         }
     }
+
+  
 
 }

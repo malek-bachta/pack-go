@@ -99,7 +99,7 @@ public class ShowServiceController implements Initializable {
     private void back_to_add(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("AjoutService.fxml"));
+            root = FXMLLoader.load(getClass().getResource("AddService.fxml"));
             Stage myWindow = (Stage) add.getScene().getWindow();
             Scene sc = new Scene(root);
             myWindow.setScene(sc);

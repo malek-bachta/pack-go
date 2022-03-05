@@ -230,7 +230,7 @@ public class AjoutController implements Initializable {
     private void add_service(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/Gui_serviceh/AjoutService.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/Gui_serviceh/AddService.fxml"));
             Stage myWindow = (Stage) show_list.getScene().getWindow();
             Scene sc = new Scene(root);
             myWindow.setScene(sc);
