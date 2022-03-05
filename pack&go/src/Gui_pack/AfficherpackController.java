@@ -28,7 +28,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 /**
  * FXML Controller class
- *
+ 
  * @author MSI
  */
 public class AfficherpackController implements Initializable {
@@ -60,19 +60,19 @@ public class AfficherpackController implements Initializable {
      * @param rb
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {/*
+    public void initialize(URL url, ResourceBundle rb) {
       try {
             // TODO
             List<packs> packs = new ArrayList<>();
-            packs=pa.afficher();
+            packs=pa.afficherpacks();
             userData.clear();
             userData.addAll(packs);
             table.setItems(userData);
             id.setCellValueFactory(
-                    new PropertyValueFactory<>("id")
+                    new PropertyValueFactory<>("id_pack")
             );
             nom.setCellValueFactory(
-                    new PropertyValueFactory<>("nom")
+                    new PropertyValueFactory<>("nom_pack")
             );
             texte.setCellValueFactory(
                     new PropertyValueFactory<>("texte")
@@ -89,7 +89,7 @@ public class AfficherpackController implements Initializable {
            
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }*/
+        }
         // TODO
     }
 
