@@ -24,14 +24,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.print.PrinterJob;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import javafx.util.Duration;
 
 /**
@@ -139,5 +143,18 @@ public class AfficheController implements Initializable {
         table.setItems(data);
     }
 
-    
+    @FXML
+    private void pdf(MouseEvent event) {
+        System.out.println("To Printer!");
+        PrinterJob job = PrinterJob.createPrinterJob();
+        if (job != null) {
+            Window primaryStage = null;
+            job.showPrintDialog(primaryStage);
+            table.setVisible(true);
+            Node root = table;
+            job.printPage(root);
+            job.endJob();
+        }
+    }
+
 }

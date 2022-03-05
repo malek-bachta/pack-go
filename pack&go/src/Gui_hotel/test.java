@@ -28,7 +28,7 @@ public class test extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("ajout.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Gui_serviceh/AjoutService.fxml"));
             Scene scene = new Scene(root);
 
             primaryStage.setTitle("Add Hotel");

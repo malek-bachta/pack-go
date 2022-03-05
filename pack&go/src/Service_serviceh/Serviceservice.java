@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import utils.MyDB;
-
+    
 /**
  *
  * @author mbach
@@ -43,6 +43,24 @@ public class Serviceservice implements service<Services> {
     public List afficher() throws SQLException {
         List<Services> services = new ArrayList<>();
         String req = "select * from services";
+        stm = connexion.createStatement();
+        //ensemble de resultat
+        ResultSet rst = stm.executeQuery(req);
+
+        while (rst.next()) {
+            Services s = new Services(rst.getInt("idS"),
+                    rst.getString("formule"),
+                    rst.getFloat("prix"),
+                    rst.getString("sejours"),
+                    rst.getString("activite"),
+                    rst.getString("etat"));
+            services.add(s);
+        }
+        return services;
+    }
+    public List afficherid(int id) throws SQLException {
+        List<Services> services = new ArrayList<>();
+        String req = "select * from services where idS = 9";
         stm = connexion.createStatement();
         //ensemble de resultat
         ResultSet rst = stm.executeQuery(req);

@@ -61,6 +61,25 @@ public class HotelService implements service<Hotels> {
         }
         return hotels;
     }
+    public List<Hotels> afficherid(int id ) throws SQLException {
+        List<Hotels> hotels = new ArrayList<>();
+        String req = "select * from hotels where idH = 40";
+        stm = connexion.createStatement();
+        //ensemble de resultat
+        ResultSet rst = stm.executeQuery(req);
+
+        while (rst.next()) {
+            Hotels h = new Hotels(rst.getInt("idH"),
+                    rst.getString("nomH"),
+                    rst.getString("categorie"),
+                    rst.getString("adresse"),
+                    rst.getString("email"),
+                    rst.getInt("telH"),
+                    rst.getString("equipement"));
+            hotels.add(h);
+        }
+        return hotels;
+    }
 
     @Override
     public List<Hotels> modifier(int id, String categorie, String equipement) {

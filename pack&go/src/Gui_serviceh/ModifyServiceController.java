@@ -5,15 +5,17 @@
  */
 package Gui_serviceh;
 
-import Service_serviceh.Serviceservice;
 import Entities_serviceh.Services;
-import Services_hotel.HotelService;
+import Gui_hotel.ModifierController;
+import Service_serviceh.Serviceservice;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
@@ -24,10 +26,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.effect.BoxBlur;
 import javafx.stage.Stage;
 
 /**
@@ -35,16 +34,8 @@ import javafx.stage.Stage;
  *
  * @author mbach
  */
-public class AjoutServiceController implements Initializable {
+public class ModifyServiceController implements Initializable {
 
-    @FXML
-    private Button add;
-    @FXML
-    private Button show_service;
-    @FXML
-    private Button modify;
-    @FXML
-    private Button add_hotel;
     @FXML
     private TextField formuleS;
     @FXML
@@ -54,7 +45,16 @@ public class AjoutServiceController implements Initializable {
     @FXML
     private TextField activityS;
     @FXML
+    private Button show_service;
+    @FXML
+    private Button modif;
+    @FXML
+    private Button add_hotel;
+    @FXML
     private TextField disponibility;
+
+    Services s = new Services();
+    List<Services> liste = new ArrayList<>();
 
     /**
      * Initializes the controller class.
@@ -62,56 +62,21 @@ public class AjoutServiceController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-
-    }
-
-    @FXML
-    private void add_service(ActionEvent event) {
-        if ((formuleS.getText().isEmpty() == false)
-                && (sejourS.getText().isEmpty() == false)
-                && (priceS.getText().isEmpty() == false)
-                && (activityS.getText().isEmpty() == false)
-                && (disponibility.getText().isEmpty() == false)
-                && (verif_formule())
-                && (verif_sejours())
-                && (verif_prix())
-                && (verif_disponibility())
-                && (verif_activity())) {
-            Services s = new Services(formuleS.getText(), sejourS.getText(), Float.parseFloat(priceS.getText()), activityS.getText(), disponibility.getText());
-            Serviceservice hs = new Serviceservice();
-
-            try {
-                hs.ajouter(s);
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Success");
-                alert.setContentText("service is added successfully!");
-                alert.show();
-
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
-            }
-            Parent root;
-            try {
-                root = FXMLLoader.load(getClass().getResource("ShowService.fxml"));
-                Stage myWindow = (Stage) add.getScene().getWindow();
-                Scene sc = new Scene(root);
-                myWindow.setScene(sc);
-                myWindow.setTitle("page name");
-                //myWindow.setFullScreen(true);
-                myWindow.show();
-            } catch (IOException ex) {
-                System.out.println(ex.getMessage());
-            }
-        } else {
-            BoxBlur blur = new BoxBlur(3, 3, 3);
-            add.setEffect(blur);
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERROR ");
-            alert.setContentText("Please check your fields!!");
-            alert.showAndWait();
-            add.setEffect(null);
-            System.out.println("Imposible");
+        Serviceservice sp = new Serviceservice();
+        try {
+            liste = sp.afficherid(0);
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifierController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        liste.forEach((l) -> {
+            formuleS.setText(l.getFormule());
+            sejourS.setText(l.getSejours());
+            priceS.setText(Float.toString(l.getPrix()));
+            activityS.setText(l.getActivite());
+            disponibility.setText(l.getEtat());
+
+        });
     }
 
     @FXML
@@ -122,7 +87,33 @@ public class AjoutServiceController implements Initializable {
             Stage myWindow = (Stage) show_service.getScene().getWindow();
             Scene sc = new Scene(root);
             myWindow.setScene(sc);
-            myWindow.setTitle("list service ");
+            myWindow.setTitle("Service List");
+            //myWindow.setFullScreen(true);
+            myWindow.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void modif(ActionEvent event) {
+        String formule = formuleS.getText();
+        String sejour = sejourS.getText();
+        Float prix = Float.parseFloat(priceS.getText());
+        String activity = activityS.getText();
+        String dispo = disponibility.getText();
+
+        Services p = new Services(formule, sejour, prix, activity, dispo);
+        Serviceservice sp = new Serviceservice();
+        sp.modifier(9, formule, prix, sejour, activity, dispo);
+
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("ShowService.fxml"));
+            Stage myWindow = (Stage) show_service.getScene().getWindow();
+            Scene sc = new Scene(root);
+            myWindow.setScene(sc);
+            myWindow.setTitle("Hotels List ");
             //myWindow.setFullScreen(true);
             myWindow.show();
         } catch (IOException ex) {
@@ -135,33 +126,15 @@ public class AjoutServiceController implements Initializable {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("/Gui_hotel/ajout.fxml"));
-            Stage myWindow = (Stage) add.getScene().getWindow();
+            Stage myWindow = (Stage) show_service.getScene().getWindow();
             Scene sc = new Scene(root);
             myWindow.setScene(sc);
-            myWindow.setTitle("add hotel ");
+            myWindow.setTitle("Hotels List");
             //myWindow.setFullScreen(true);
             myWindow.show();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-    }
-
-    @FXML
-    private void modify(ActionEvent event) {
-
-        Parent root;
-        try {
-            root = FXMLLoader.load(getClass().getResource("ModifyService.fxml"));
-            Stage myWindow = (Stage) modify.getScene().getWindow();
-            Scene sc = new Scene(root);
-            myWindow.setScene(sc);
-            myWindow.setTitle("Modify Service");
-            //myWindow.setFullScreen(true);
-            myWindow.show();
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }
-
     }
 
     @FXML
@@ -244,5 +217,4 @@ public class AjoutServiceController implements Initializable {
             return false;
         }
     }
-
-}
+    }

@@ -91,17 +91,30 @@ public class AjoutController implements Initializable {
             } catch (SQLException ex) {
                 System.out.println(ex.getMessage());
             }
+            
+            Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("affiche.fxml"));
+            Stage myWindow = (Stage) show_list.getScene().getWindow();
+            Scene sc = new Scene(root);
+            myWindow.setScene(sc);
+            myWindow.setTitle("Uotel Data Update");
+            //myWindow.setFullScreen(true);
+            myWindow.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
         } else {
 
             BoxBlur blur = new BoxBlur(3, 3, 3);
             ajout.setEffect(blur);
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Repetez svp");
-            alert.setHeaderText("champs non validés");
-            alert.setContentText("Verifiez vos champs svp!!");
+            alert.setTitle("ERROR ");
+            alert.setContentText("Please check your fields!!");
             alert.showAndWait();
             ajout.setEffect(null);
-            System.out.println("nest pas possible");
+            System.out.println("Impsible");
 
         }
 
@@ -127,91 +140,91 @@ public class AjoutController implements Initializable {
         }
     }
 
-    @FXML
-    private Boolean verif_name(ActionEvent event) {
-        Pattern p = Pattern.compile("[a-zA-Z]+");
-        Matcher m = p.matcher(adressH.getText());
-        if (m.find() && m.group().equals(adressH.getText())) {
-            return true;
-        } else {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("ERROR");
-            alert.setHeaderText(null);
-            alert.setContentText("Wrong Imput Hotel name !!");
-            alert.showAndWait();
-            return false;
+        @FXML
+        private Boolean verif_name(ActionEvent event) {
+            Pattern p = Pattern.compile("[a-zA-Z]+");
+            Matcher m = p.matcher(adressH.getText());
+            if (m.find() && m.group().equals(adressH.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput Hotel name !!");
+                alert.showAndWait();
+                return false;
+            }
+
         }
 
-    }
-
-    @FXML
-    private Boolean verif_category(ActionEvent event) {
-        Pattern p = Pattern.compile("[a-zA-Z]+");
-        Matcher m = p.matcher(adressH.getText());
-        if (m.find() && m.group().equals(adressH.getText())) {
-            return true;
-        } else {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("ERROR");
-            alert.setHeaderText(null);
-            alert.setContentText("Wrong Imput in Category!!");
-            alert.showAndWait();
-            return false;
+        @FXML
+        private Boolean verif_category(ActionEvent event) {
+            Pattern p = Pattern.compile("[a-zA-Z]+");
+            Matcher m = p.matcher(adressH.getText());
+            if (m.find() && m.group().equals(adressH.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput in Category!!");
+                alert.showAndWait();
+                return false;
+            }
         }
-    }
 
-    @FXML
+        @FXML
 
-    private boolean verif_adress() {
+        private boolean verif_adress() {
 
-        Pattern p = Pattern.compile("[a-zA-Z]+");
-        Matcher m = p.matcher(adressH.getText());
-        if (m.find() && m.group().equals(adressH.getText())) {
-            return true;
-        } else {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("ERROR");
-            alert.setHeaderText(null);
-            alert.setContentText("Wrong Imput in Adress !!");
-            alert.showAndWait();
-            return false;
+            Pattern p = Pattern.compile("[a-zA-Z]+");
+            Matcher m = p.matcher(adressH.getText());
+            if (m.find() && m.group().equals(adressH.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput in Adress !!");
+                alert.showAndWait();
+                return false;
+            }
         }
-    }
 
-    @FXML
+        @FXML
 
-    private boolean verif_mail() {
-        Pattern p = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
-        Matcher m = p.matcher(email.getText());
+        private boolean verif_mail() {
+            Pattern p = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+            Matcher m = p.matcher(email.getText());
 
-        if (m.find() && m.group().equals(email.getText())) {
-            return true;
-        } else {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("ERROR");
-            alert.setHeaderText(null);
-            alert.setContentText("Wrong Imput in Email!!");
-            alert.showAndWait();
-            return false;
+            if (m.find() && m.group().equals(email.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput in Email!!");
+                alert.showAndWait();
+                return false;
+            }
         }
-    }
 
-    @FXML
-    private boolean verif_phone() {
-        Pattern p = Pattern.compile("[2-9]{1}[0-9]{7}$");
-        Matcher m = p.matcher(telH.getText());
+        @FXML
+        private boolean verif_phone() {
+            Pattern p = Pattern.compile("[2-9]{1}[0-9]{7}$");
+            Matcher m = p.matcher(telH.getText());
 
-        if (m.find() && m.group().equals(telH.getText())) {
-            return true;
-        } else {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("ERROR");
-            alert.setHeaderText(null);
-            alert.setContentText("Wrong Imput in Phone Number !!");
-            alert.showAndWait();
-            return false;
+            if (m.find() && m.group().equals(telH.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput in Phone Number !!");
+                alert.showAndWait();
+                return false;
+            }
         }
-    }
 
     @FXML
     private void add_service(ActionEvent event) {
@@ -231,5 +244,17 @@ public class AjoutController implements Initializable {
 
     @FXML
     private void modify(ActionEvent event) {
+         Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("Modifier.fxml"));
+            Stage myWindow = (Stage) modify.getScene().getWindow();
+            Scene sc = new Scene(root);
+            myWindow.setScene(sc);
+            myWindow.setTitle("Uotel Data Update");
+            //myWindow.setFullScreen(true);
+            myWindow.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }

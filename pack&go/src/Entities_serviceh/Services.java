@@ -27,6 +27,13 @@ public class Services {
         this.activite = activite;
         this.etat = etat;
     }
+        public Services(String formule,  String sejours,float prix, String activite, String etat) {
+        this.formule = formule;
+        this.prix = prix;
+        this.sejours = sejours;
+        this.activite = activite;
+        this.etat = etat;
+    }
 
     public Services(int idS, String formule, float prix, String sejours, String activite, String etat) {
         this.idS = idS;
@@ -37,9 +44,7 @@ public class Services {
         this.etat = etat;
     }
 
-    public Services(String formula, String sejours, float prix, String activite, String dispoo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
     public int getIdS() {
         return idS;
