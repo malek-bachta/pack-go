@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="699.0" prefWidth="1099.0" style="-fx-background-color: #582900;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_transport.AfficherTController">
+   <children>
+      <Button fx:id="back" layoutX="364.0" layoutY="573.0" mnemonicParsing="false" onAction="#affichertranspo" prefHeight="58.0" prefWidth="128.0" text="return">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <TableView fx:id="table" layoutX="151.0" layoutY="48.0" prefHeight="468.0" prefWidth="798.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="101.0" text="transport id" />
+          <TableColumn fx:id="type" prefWidth="70.0" text="type" />
+            <TableColumn fx:id="nom" prefWidth="130.0" text="nom de l'agence" />
+            <TableColumn fx:id="prix" prefWidth="68.0" text="prix" />
+            <TableColumn fx:id="duree" prefWidth="102.0" text="duree" />
+            <TableColumn fx:id="destination" prefWidth="128.0" text="destination" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button fx:id="delete" layoutX="595.0" layoutY="571.0" mnemonicParsing="false" onAction="#delete" prefHeight="58.0" prefWidth="118.0" text="delete" />
+   </children>
+</AnchorPane>
