@@ -37,9 +37,18 @@
                               <Font name="Arial" size="24.0" />
                            </font>
                         </Label>
-                        <Button fx:id="show_service" layoutX="72.0" layoutY="272.0" mnemonicParsing="false" onAction="#show_service" prefHeight="55.0" prefWidth="173.0" text="Show Services" />
-                        <Button fx:id="modify" layoutX="72.0" layoutY="434.0" mnemonicParsing="false" onAction="#modify" prefHeight="55.0" prefWidth="173.0" text="Modify Srtvice" />
-                        <Button fx:id="add_hotel" layoutX="72.0" layoutY="353.0" mnemonicParsing="false" onAction="#add_hotel" prefHeight="55.0" prefWidth="173.0" text="Add Hotel" />
+                        <Button fx:id="show_service" layoutX="72.0" layoutY="272.0" mnemonicParsing="false" onAction="#show_service" prefHeight="55.0" prefWidth="173.0" style="-fx-background-color: #FFFFFF;" text="Show Services" textFill="#582900">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Button>
+                        <Button fx:id="modify" layoutX="72.0" layoutY="434.0" mnemonicParsing="false" onAction="#modify" prefHeight="55.0" prefWidth="173.0" style="-fx-background-color: #FFFFFF;" text="Modify Srtvice" textFill="#582900">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Button>
+                        <Button fx:id="add_hotel" layoutX="72.0" layoutY="353.0" mnemonicParsing="false" onAction="#add_hotel" prefHeight="55.0" prefWidth="173.0" style="-fx-background-color: #FFFFFF;" text="Add Hotel" textFill="#582900">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Button>
                      </children>
                   </AnchorPane>
                   <ImageView fitHeight="109.0" fitWidth="101.0" layoutX="581.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">

@@ -37,8 +37,14 @@
                               <Font name="Arial" size="24.0" />
                            </font>
                         </Label>
-                        <Button fx:id="show_service" layoutX="72.0" layoutY="272.0" mnemonicParsing="false" onAction="#show_service" prefHeight="55.0" prefWidth="173.0" text="Show Services" />
-                        <Button fx:id="add_service" layoutX="72.0" layoutY="353.0" mnemonicParsing="false" onAction="#add_service" prefHeight="55.0" prefWidth="173.0" text="Add Service" />
+                        <Button fx:id="show_service" layoutX="72.0" layoutY="272.0" mnemonicParsing="false" onAction="#show_service" prefHeight="55.0" prefWidth="173.0" text="Show Services" textFill="#582900">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Button>
+                        <Button fx:id="add_service" layoutX="72.0" layoutY="353.0" mnemonicParsing="false" onAction="#add_service" prefHeight="55.0" prefWidth="173.0" text="Add Service" textFill="#582900">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Button>
                      </children>
                   </AnchorPane>
                   <ImageView fitHeight="109.0" fitWidth="101.0" layoutX="581.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
