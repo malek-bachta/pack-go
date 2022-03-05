@@ -6,7 +6,7 @@
 package Gui_transport;
 
 import Entities_transport.Transport;
-import Service_guide.TransportService;
+import Service_transport.TransportService;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;

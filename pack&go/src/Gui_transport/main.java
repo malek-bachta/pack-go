@@ -22,12 +22,10 @@ import javafx.stage.Stage;
  * @author Soulaima ben romdhan
  */
 public class main extends Application {
-    
+
     @Override
     public void start(Stage primaryStage) {
-        
-        
-        
+
         try {
             Parent root = FXMLLoader.load(getClass().getResource("ajouterT.fxml"));
             Scene scene = new Scene(root);
@@ -45,5 +43,5 @@ public class main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Service_guide;
+package Service_transport;
 
+import Service_guide.*;
 import Entities_transport.Transport;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
