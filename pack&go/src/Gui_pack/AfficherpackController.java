@@ -9,6 +9,7 @@ import Entities_pack.packs;
 import Service_pack.Servicepack;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLDataException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +27,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
 /**
  * FXML Controller class
- 
+ *
  * @author MSI
  */
 public class AfficherpackController implements Initializable {
@@ -53,18 +55,23 @@ public class AfficherpackController implements Initializable {
     };
     @FXML
     private Button rout;
+    @FXML
+    private Button supp;
+    @FXML
+    private Button mod;
 
     /**
      * Initializes the controller class.
+     *
      * @param url
      * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      try {
+        try {
             // TODO
             List<packs> packs = new ArrayList<>();
-            packs=pa.afficherpacks();
+            packs = pa.afficherpacks();
             userData.clear();
             userData.addAll(packs);
             table.setItems(userData);
@@ -86,7 +93,7 @@ public class AfficherpackController implements Initializable {
             destination.setCellValueFactory(
                     new PropertyValueFactory<>("destination")
             );
-           
+
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -95,14 +102,47 @@ public class AfficherpackController implements Initializable {
 
     @FXML
     private void routeur2(ActionEvent event) {
-          Parent  root;
+        Parent root;
         try {
-          root = FXMLLoader.load(getClass().getResource("packs.fxml"));
+            root = FXMLLoader.load(getClass().getResource("packs.fxml"));
             Stage myWindow = (Stage) rout.getScene().getWindow();
             Scene sc = new Scene(root);
             myWindow.setScene(sc);
             myWindow.setTitle(" ");
             //myWindow.setFullScreen(true);
+            myWindow.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void supprimer_pack(ActionEvent event) throws SQLException {
+        packs p = (packs) table.getSelectionModel().getSelectedItem();
+        int id = p.getId_pack();
+        pa.suprimerPack(id);
+        resetTableData();
+
+    }
+
+
+    public void resetTableData() throws SQLDataException, SQLException {
+        List<packs> l = new ArrayList<>();
+        l = pa.afficherpacks();
+        ObservableList<packs> data = FXCollections.observableArrayList(l);
+        table.setItems(data);
+    }
+
+    @FXML
+    private void modifier(ActionEvent event) {
+        Parent  root;
+        
+        try {
+          root = FXMLLoader.load(getClass().getResource("modifier_pack.fxml"));
+            Stage myWindow = (Stage) mod.getScene().getWindow();
+            Scene sc = new Scene(root);
+            myWindow.setScene(sc);
+            myWindow.setTitle(" ");
             myWindow.show();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

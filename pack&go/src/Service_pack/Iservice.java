@@ -15,8 +15,8 @@ import java.util.List;
  */
 public interface Iservice <T>{
     void ajouter(T t) throws SQLException;
-    void modifier(T t)throws SQLException;
-    void  supprimer (int t)throws SQLException;
-    List<T> afficher ()throws SQLException;
+     List<T> modifierPack(int a, String b ,  String c,  String d,  String e,  String f )throws SQLException;
+     List<T>  suprimerPack (int t)throws SQLException;
+    List<T> afficherpacks ()throws SQLException;
     
 }

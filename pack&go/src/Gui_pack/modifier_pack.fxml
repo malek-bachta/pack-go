@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="769.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_pack.PacksController">
+<AnchorPane id="AnchorPane" prefHeight="769.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_pack.Modifier_packController">
    <children>
       <Label layoutX="455.0" layoutY="220.0" text="Nom_pack:" />
       <Label layoutX="474.0" layoutY="281.0" text="texte:" />
@@ -28,16 +28,17 @@
                   <Image url="@../Utils/logo.png" />
                </image>
             </ImageView>
-            <Button layoutX="55.0" layoutY="390.0" mnemonicParsing="false" onAction="#ajouterpack" prefHeight="31.0" prefWidth="158.0" text="ajouter" />
-            <Button fx:id="afficher" layoutX="52.0" layoutY="478.0" mnemonicParsing="false" onAction="#afficher" prefHeight="31.0" prefWidth="158.0" text="afficher" />
-            <Button fx:id="rout1" layoutX="61.0" layoutY="555.0" mnemonicParsing="false" onAction="#rout1" prefHeight="31.0" prefWidth="158.0" text="routeur" />
+            <Button layoutX="50.0" layoutY="563.0" mnemonicParsing="false" onAction="#modifier_pack" prefHeight="31.0" prefWidth="158.0" text="modifier" />
+            <Button fx:id="rout1" layoutX="50.0" layoutY="630.0" mnemonicParsing="false" onAction="#rout1" prefHeight="31.0" prefWidth="158.0" text="routeur" />
          </children>
       </AnchorPane>
-      <Text layoutX="560.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Pack">
+      <Text layoutX="560.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="modifier">
          <font>
             <Font size="31.0" />
          </font>
       </Text>
       <Text layoutX="895.0" layoutY="733.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pack&amp;go@gmail.com" />
+      <Label layoutX="354.0" layoutY="589.0" text="id_pack" />
+      <TextField fx:id="Pid" layoutX="456.0" layoutY="584.0" />
    </children>
 </AnchorPane>

@@ -43,10 +43,6 @@ public class PacksController implements Initializable {
     @FXML
     private Button afficher;
     @FXML
-    private TextField Pid;
-    @FXML
-    private Button supp;
-    @FXML
     private Button rout1;
 
     /**
@@ -100,43 +96,6 @@ public class PacksController implements Initializable {
             System.out.println(ex.getMessage());
         }
       
-    }
-
-    @FXML
-    private void modifier_pack(ActionEvent event) {
-        int id=Integer.parseInt(Pid.getText());
-         String Nom_pack=Pnom.getText();
-                       String texte=Ptexte.getText();
-         String service=Pservice.getText();
-         String guide=Pguide.getText();
-         String destination=Pdestination.getText();
-  
-         packs p = new packs(Nom_pack, texte, service, guide, destination);
-         Servicepack pa = new Servicepack () {};
-         pa.modifierPack(id, Nom_pack, texte, service, guide, destination);
-         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-         alert.setTitle("Success");
-         alert.setContentText("offre is update successfully!");
-         alert.show();
-         Pnom.setText("");
-         Ptexte.setText("");
-         Pservice.setText("");
-         Pguide.setText("");
-         Pdestination.setText("");
-
-    }
-
-    @FXML
-    private void supp_pack(ActionEvent event) {
-          int id=Integer.parseInt(Pid.getText());
-       
-        
- Servicepack pa = new Servicepack () {};
-pa.suprimerPack(id);
-Alert alert = new Alert(Alert.AlertType.INFORMATION);
-         alert.setTitle("Success");
-         alert.setContentText("offre is delate successfully!");
-         alert.show();
     }
 
     @FXML

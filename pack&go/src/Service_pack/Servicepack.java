@@ -5,7 +5,6 @@
  */
 package Service_pack;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,96 +19,80 @@ import utils.MyDB;
  *
  * @author THEOLDISBACK
  */
-public abstract class Servicepack implements Iservice<packs> {
+public  class Servicepack implements Iservice<packs> {
+
     private final Connection cnx;
-    
-    public Servicepack()
-    {
-        cnx= MyDB.getInstance().getConnexion();
+
+    public Servicepack() {
+        cnx = MyDB.getInstance().getConnexion();
     }
 
     @Override
-    public void ajouter(packs p) throws SQLException{
-       String req="INSERT INTO `packs`(`nom_pack`,`texte`,`service`,`guide`,`destination`) VALUES ('"+p.getNom_pack()+"','"+p.getTexte()+"','"+p.getService()+"','"+p.getGuide()+"','"+p.getDestination()+"');";
-        Statement st=cnx.createStatement();
+    public void ajouter(packs p) throws SQLException {
+        String req = "INSERT INTO `packs`(`nom_pack`,`texte`,`service`,`guide`,`destination`) VALUES ('" + p.getNom_pack() + "','" + p.getTexte() + "','" + p.getService() + "','" + p.getGuide() + "','" + p.getDestination() + "');";
+        Statement st = cnx.createStatement();
         st.executeUpdate(req);
-      
-        
-    }
-       public void ajouter1(packs p) throws SQLException{
-       String req="INSERT INTO `packs`(`nom_pack`,`texte`,`service`,`guide`,`destination`) VALUES ( ?,?,?,?,?);";
-         PreparedStatement pre=cnx.prepareStatement(req);
-       pre.setString(1, p.getNom_pack());
-         pre.setString(2, p.getTexte());
-         pre.setString(3, p.getService());
-         pre.setString(4, p.getGuide());
-         pre.setString(5, p.getDestination());
 
-         pre.executeUpdate(req);
-           System.out.println("success!");
-        
     }
+
+    public void ajouter1(packs p) throws SQLException {
+        String req = "INSERT INTO `packs`(`nom_pack`,`texte`,`service`,`guide`,`destination`) VALUES ( ?,?,?,?,?);";
+        PreparedStatement pre = cnx.prepareStatement(req);
+        pre.setString(1, p.getNom_pack());
+        pre.setString(2, p.getTexte());
+        pre.setString(3, p.getService());
+        pre.setString(4, p.getGuide());
+        pre.setString(5, p.getDestination());
+
+        pre.executeUpdate(req);
+        System.out.println("success!");
+
+    }
+
     @Override
-    public void modifier(packs p) throws SQLException{
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   public List<packs> modifierPack(int id_pack , String nom_pack , String texte ,String service ,String guide , String destination){
+    public List<packs> modifierPack(int id_pack, String nom_pack, String texte, String service, String guide, String destination) {
         List<packs> packs = new ArrayList<>();
-         try {
-             String req="UPDATE packs SET nom_pack ='"+nom_pack
-                     +"', texte='"+texte
-                     +"', service='"+service
-                     +"', guide='"+guide 
-                     +"', destination='"+destination
-                     +"' WHERE id_pack ="+id_pack;
-          
-             PreparedStatement pre=cnx.prepareStatement(req);
+        try {
+            String req = "UPDATE packs SET nom_pack ='" + nom_pack
+                    + "', texte='" + texte
+                    + "', service='" + service
+                    + "', guide='" + guide
+                    + "', destination='" + destination
+                    + "' WHERE id_pack =" + id_pack;
+
+            PreparedStatement pre = cnx.prepareStatement(req);
             pre.executeUpdate();
             System.out.println("pack Modifiée");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return packs;
-}  
-    
-    
-    
-    
-    
-    
-    @Override
-    public void supprimer(int p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-public List<packs> suprimerPack(int id_pack){
+
+    @Override
+
+    public List<packs> suprimerPack(int id_pack) {
         List<packs> message = new ArrayList<>();
-        String req="DELETE FROM packs WHERE id_pack="+id_pack;
+        String req = "DELETE FROM packs WHERE id_pack=" + id_pack;
         try {
-           PreparedStatement  pre=cnx.prepareStatement(req);
-             pre.executeUpdate();
-             System.out.println("pack supprimée");
-          
-        } catch (SQLException e){
+            PreparedStatement pre = cnx.prepareStatement(req);
+            pre.executeUpdate();
+            System.out.println("pack supprimée");
+
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return message;
     }
 
-   @Override
-                    public List<packs> afficher() throws SQLException {
-                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                    }
-       
-     
-    
-    
-       public List<packs> afficherpacks() throws SQLException {
+    @Override
 
-        List<packs >packs = new ArrayList<>();
+    public List<packs> afficherpacks() throws SQLException {
+
+        List<packs> packs = new ArrayList<>();
         String req = "select * from packs";
-        Statement st=cnx.createStatement();
-        
+        Statement st = cnx.createStatement();
+
         //ensemble de resultat
         ResultSet rst = st.executeQuery(req);
 
@@ -119,13 +102,10 @@ public List<packs> suprimerPack(int id_pack){
                     rst.getString("texte"),
                     rst.getString("service"),
                     rst.getString("guide"),
-                    rst.getString("destination") );
+                    rst.getString("destination"));
             packs.add(p);
         }
         return packs;
     }
-
-
-       
 
 }
