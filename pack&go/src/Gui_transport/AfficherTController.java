@@ -119,10 +119,7 @@ public class AfficherTController implements Initializable {
     
 
     @FXML
-    private void affichertranspo(ActionEvent event) {
-    }
-    
-     private void back(ActionEvent event) {
+    private void back(ActionEvent event) {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("ajouterT.fxml"));
@@ -135,7 +132,8 @@ public class AfficherTController implements Initializable {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-    }
+     }
+    
 public static int idt;
     @FXML
     private void delete(ActionEvent event) throws SQLException {

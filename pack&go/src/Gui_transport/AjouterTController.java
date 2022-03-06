@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Gui_transport;
+import Entities_guide.Guide;
+import Service_guide.GuideService;
 
 import Entities_transport.Transport;
 import Service_transport.TransportService;

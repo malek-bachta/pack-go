@@ -7,14 +7,19 @@ package Gui_guide;
 
 import Entities_guide.Guide;
 import Service_guide.GuideService;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -53,6 +58,23 @@ public class AjouterGController implements Initializable {
             
           
         } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    
+    }
+
+    @FXML
+    private void afficherg(ActionEvent event) {
+            Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("afficherT.fxml"));
+            Stage myWindow = (Stage) afficherg.getScene().getWindow();
+            Scene sc = new Scene(root);
+            myWindow.setScene(sc);
+            myWindow.setTitle("affiche ");
+            //myWindow.setFullScreen(true);
+            myWindow.show();
+        } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
     

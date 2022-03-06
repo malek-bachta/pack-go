@@ -16,7 +16,7 @@
                   <Image url="@../../../../../../Users/Soulaima%20ben%20romdhan/Downloads/274687501_2233903090091987_5680559546928755186_n.png" />
                </image>
             </ImageView>
-            <Button layoutX="97.0" layoutY="260.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="130.0" text="show guide" />
+            <Button layoutX="97.0" layoutY="260.0" mnemonicParsing="false" onAction="#afficherg" prefHeight="59.0" prefWidth="130.0" text="show guide" />
             <Button layoutX="97.0" layoutY="337.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="130.0" text="modify guide" />
          </children></AnchorPane>
       <Text layoutX="454.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom" />
