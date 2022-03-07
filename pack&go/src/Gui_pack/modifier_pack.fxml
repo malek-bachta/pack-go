@@ -21,15 +21,10 @@
       <TextField fx:id="Pguide" layoutX="630.0" layoutY="405.0" />
       <TextField fx:id="Pdestination" layoutX="630.0" layoutY="472.0" />
       <TextField fx:id="Pservice" layoutX="630.0" layoutY="343.0" />
-      <AnchorPane prefHeight="769.0" prefWidth="268.0" style="-fx-background-color: #582900;">
+      <AnchorPane prefHeight="769.0" prefWidth="268.0" styleClass="side_anchor" stylesheets="@../Gui_offre/fxml.css">
          <children>
-            <ImageView fitHeight="140.0" fitWidth="200.0" layoutX="33.0" layoutY="87.0">
-               <image>
-                  <Image url="@../Utils/logo.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="50.0" layoutY="563.0" mnemonicParsing="false" onAction="#modifier_pack" prefHeight="31.0" prefWidth="158.0" text="modifier" />
-            <Button fx:id="rout1" layoutX="50.0" layoutY="630.0" mnemonicParsing="false" onAction="#rout1" prefHeight="31.0" prefWidth="158.0" text="retour" />
+            <Button layoutX="1.0" layoutY="348.0" mnemonicParsing="false" onAction="#modifier_pack" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@../Gui_offre/fxml.css" text="modifier" />
+            <Button fx:id="rout1" layoutX="2.0" layoutY="433.0" mnemonicParsing="false" onAction="#rout1" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@../Gui_offre/fxml.css" text="retour" />
          </children>
       </AnchorPane>
       <Text layoutX="560.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="modifier">
@@ -40,5 +35,15 @@
       <Text layoutX="895.0" layoutY="733.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pack&amp;go@gmail.com" />
       <Label layoutX="354.0" layoutY="589.0" text="id_pack" />
       <TextField fx:id="Pid" layoutX="456.0" layoutY="584.0" />
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="43.0" layoutY="32.0">
+         <image>
+            <Image url="@../Utils/logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="118.0" layoutX="966.0" layoutY="35.0">
+         <image>
+            <Image url="@../Utils/title.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

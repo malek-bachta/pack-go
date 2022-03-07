@@ -3,18 +3,35 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_offre.ModifierEtSuppOffreController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="dark_blue_back" stylesheets="@fxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_offre.ModifierEtSuppOffreController">
    <children>
-      <Label layoutX="40.0" layoutY="36.0" text="Id_of:" />
-      <Label layoutX="32.0" layoutY="118.0" text="Nom_offre:" />
-      <Label layoutX="32.0" layoutY="207.0" text="budget:" />
-      <TextField fx:id="Mid" layoutX="193.0" layoutY="31.0" />
-      <TextField fx:id="Mnom" layoutX="193.0" layoutY="113.0" />
-      <TextField fx:id="Mbudget" layoutX="193.0" layoutY="192.0" />
-      <Button layoutX="457.0" layoutY="305.0" mnemonicParsing="false" onAction="#modifieroffre" text="modifier" />
-      <Button fx:id="suppoffre" layoutX="301.0" layoutY="305.0" mnemonicParsing="false" onAction="#suprimeroffre" text="supp" />
-      <Button fx:id="routour1" layoutX="74.0" layoutY="305.0" mnemonicParsing="false" onAction="#routour1" text="retour" />
+      <Label layoutX="40.0" layoutY="36.0" text="Id_of:" textFill="#f8f3f3">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label layoutX="32.0" layoutY="118.0" text="Nom_offre:" textFill="#f7f8f8">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label layoutX="32.0" layoutY="207.0" text="budget:" textFill="#f8f3f3">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <TextField fx:id="Mid" layoutX="193.0" layoutY="35.0" />
+      <TextField fx:id="Mnom" layoutX="193.0" layoutY="117.0" />
+      <TextField fx:id="Mbudget" layoutX="193.0" layoutY="206.0" />
+      <Button layoutX="397.0" layoutY="294.0" mnemonicParsing="false" onAction="#modifieroffre" prefHeight="42.0" prefWidth="162.0" styleClass="button_add" stylesheets="@fxml.css" text="modifier" />
+      <Button fx:id="suppoffre" layoutX="212.0" layoutY="294.0" mnemonicParsing="false" onAction="#suprimeroffre" prefHeight="42.0" prefWidth="162.0" styleClass="button_add" stylesheets="@fxml.css" text="supp" />
+      <Button fx:id="routour1" layoutX="25.0" layoutY="294.0" mnemonicParsing="false" onAction="#routour1" prefHeight="42.0" prefWidth="162.0" styleClass="button_add" stylesheets="@fxml.css" text="retour" />
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="397.0" layoutY="33.0">
+         <image>
+            <Image url="@../Utils/logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
