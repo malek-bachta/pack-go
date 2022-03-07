@@ -30,7 +30,8 @@
             </ImageView>
             <Button layoutX="55.0" layoutY="390.0" mnemonicParsing="false" onAction="#ajouterpack" prefHeight="31.0" prefWidth="158.0" text="ajouter" />
             <Button fx:id="afficher" layoutX="52.0" layoutY="478.0" mnemonicParsing="false" onAction="#afficher" prefHeight="31.0" prefWidth="158.0" text="afficher" />
-            <Button fx:id="rout1" layoutX="61.0" layoutY="555.0" mnemonicParsing="false" onAction="#rout1" prefHeight="31.0" prefWidth="158.0" text="routeur" />
+            <Button fx:id="rout1" layoutX="61.0" layoutY="555.0" mnemonicParsing="false" onAction="#rout1" prefHeight="31.0" prefWidth="158.0" text="retour" />
+            <Button fx:id="calendar" layoutX="178.0" layoutY="711.0" mnemonicParsing="false" onAction="#aff_calendar" text="calendar" />
          </children>
       </AnchorPane>
       <Text layoutX="560.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Pack">

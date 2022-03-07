@@ -29,7 +29,7 @@
                </image>
             </ImageView>
             <Button layoutX="50.0" layoutY="563.0" mnemonicParsing="false" onAction="#modifier_pack" prefHeight="31.0" prefWidth="158.0" text="modifier" />
-            <Button fx:id="rout1" layoutX="50.0" layoutY="630.0" mnemonicParsing="false" onAction="#rout1" prefHeight="31.0" prefWidth="158.0" text="routeur" />
+            <Button fx:id="rout1" layoutX="50.0" layoutY="630.0" mnemonicParsing="false" onAction="#rout1" prefHeight="31.0" prefWidth="158.0" text="retour" />
          </children>
       </AnchorPane>
       <Text layoutX="560.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="modifier">

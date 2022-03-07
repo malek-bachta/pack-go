@@ -44,6 +44,8 @@ public class PacksController implements Initializable {
     private Button afficher;
     @FXML
     private Button rout1;
+    @FXML
+    private Button calendar;
 
     /**
      * Initializes the controller class.
@@ -113,7 +115,24 @@ public class PacksController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
+
+    @FXML
+    private void aff_calendar(ActionEvent event) {
+        Parent  root;
+        try {
+          root = FXMLLoader.load(getClass().getResource("/calendar/calendar.fxml"));
+            Stage myWindow = (Stage) calendar.getScene().getWindow();
+            Scene sc = new Scene(root);
+            myWindow.setScene(sc);
+            myWindow.setTitle(" ");
+            //myWindow.setFullScreen(true);
+            myWindow.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
+    }
+    
 
     
     

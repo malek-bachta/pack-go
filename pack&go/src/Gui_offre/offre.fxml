@@ -33,6 +33,7 @@
                   <Image url="@../Utils/logo.png" />
                </image>
             </ImageView>
+            <Button fx:id="calendar" layoutX="162.0" layoutY="718.0" mnemonicParsing="false" onAction="#aff_calendar" text="calendar" />
          </children>
       </AnchorPane>
       <Text layoutX="927.0" layoutY="740.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pack&amp;go@gmail.com" />

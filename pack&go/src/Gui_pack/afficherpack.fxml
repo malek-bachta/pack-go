@@ -20,7 +20,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button fx:id="rout" layoutX="113.0" layoutY="611.0" mnemonicParsing="false" onAction="#routeur2" text="routeur" />
+      <Button fx:id="rout" layoutX="113.0" layoutY="611.0" mnemonicParsing="false" onAction="#routeur2" text="retour" />
       <Button fx:id="supp" layoutX="215.0" layoutY="611.0" mnemonicParsing="false" onAction="#supprimer_pack" text="supp" />
       <Button fx:id="mod" layoutX="281.0" layoutY="611.0" mnemonicParsing="false" onAction="#modifier" text="mod" />
    </children>

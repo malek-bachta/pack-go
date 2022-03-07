@@ -15,6 +15,6 @@
       <TextField fx:id="Mbudget" layoutX="193.0" layoutY="192.0" />
       <Button layoutX="457.0" layoutY="305.0" mnemonicParsing="false" onAction="#modifieroffre" text="modifier" />
       <Button fx:id="suppoffre" layoutX="301.0" layoutY="305.0" mnemonicParsing="false" onAction="#suprimeroffre" text="supp" />
-      <Button fx:id="routour1" layoutX="74.0" layoutY="305.0" mnemonicParsing="false" onAction="#routour1" text="routeur" />
+      <Button fx:id="routour1" layoutX="74.0" layoutY="305.0" mnemonicParsing="false" onAction="#routour1" text="retour" />
    </children>
 </AnchorPane>
