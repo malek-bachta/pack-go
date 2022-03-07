@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="642.0" prefWidth="806.0" style="-fx-background-color: #582900;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Gui_serviceh.ShowServiceController">
+<AnchorPane id="AnchorPane" prefHeight="642.0" prefWidth="806.0" styleClass="dark_blue_back" stylesheets="@fxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_serviceh.ShowServiceController">
    <children>
       <TableView fx:id="table" layoutX="21.0" layoutY="14.0" prefHeight="406.0" prefWidth="762.0">
         <columns>
@@ -22,12 +21,12 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button fx:id="add" layoutX="460.0" layoutY="535.0" mnemonicParsing="false" onAction="#back_to_add" prefHeight="49.0" prefWidth="127.0" style="-fx-background-color: #FFFFFF;" text="Add Service">
+      <Button fx:id="add" layoutX="460.0" layoutY="535.0" mnemonicParsing="false" onAction="#back_to_add" prefHeight="49.0" prefWidth="127.0" styleClass="button_add" stylesheets="@fxml.css" text="Add Service">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="deleteS" layoutX="615.0" layoutY="535.0" mnemonicParsing="false" onAction="#deleteS" prefHeight="49.0" prefWidth="127.0" style="-fx-background-color: #FFFFFF;" text="Delete Service">
+      <Button fx:id="deleteS" layoutX="615.0" layoutY="535.0" mnemonicParsing="false" onAction="#deleteS" prefHeight="49.0" prefWidth="127.0" styleClass="button_add" stylesheets="@fxml.css" text="Delete Service">
          <font>
             <Font size="16.0" />
          </font>

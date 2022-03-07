@@ -98,34 +98,7 @@ public class HotelService implements service<Hotels> {
         return h;
     }
 
-    /* @Override
-    public List<Hotels> modifier(String nom) throws SQLException {
-        List<Hotels> hotels = new ArrayList<>();
-        String aff = "SELECT `nomH`, `categorie`, `equipement` FROM `hotels`";
-        stm = connexion.createStatement();
-        ResultSet rst = stm.executeQuery(aff);
-        String categorie = "", equipement = "";
-
-        while (rst.next()) {
-            Hotels h = new Hotels(
-                    categorie = rst.getString("categorie"),
-                    equipement = rst.getString("equipement"));
-            hotels.add(h);
-        }
-        String req = "UPDATE hotels SET  categorie= ?, equipement= ?  , WHERE nomH = " + nom;
-        try {
-            PreparedStatement pre = connexion.prepareStatement(req);
-            pre.setString(2, categorie);
-            pre.setString(3, equipement);
-
-            pre.executeUpdate();
-            System.out.println("hotel Modifiée");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return hotels;
-    }
-     */
+   
     @Override
     public void supprimer(int id) throws SQLException {
         String req = "DELETE FROM hotels WHERE  idH=" + id;
@@ -138,19 +111,6 @@ public class HotelService implements service<Hotels> {
         }
     }
 
-    /*hedhi normalemnt t9oul li lid deja supprimer ou nexiste pas 
-        List<Hotels> hotels = new ArrayList<>();
-        String verif = "SELECT * FROM hotels " ;
-        stm = connexion.createStatement();
-        
-        ResultSet rst = stm.executeQuery(verif);
-        
-        while (rst.next()) {
-            Hotels h = new Hotels(rst.getInt("idH"),
-            hotels.add(h));
-        }
-        System.out.println("hotel deja supprimer ou n'existe pas");
-     */
     public List<Hotels> recherche(String nom) throws SQLException {
         List<Hotels> list = new ArrayList<>();
 

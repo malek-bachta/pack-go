@@ -110,7 +110,7 @@ public class ModifyServiceController implements Initializable {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("ShowService.fxml"));
-            Stage myWindow = (Stage) show_service.getScene().getWindow();
+            Stage myWindow = (Stage) modif.getScene().getWindow();
             Scene sc = new Scene(root);
             myWindow.setScene(sc);
             myWindow.setTitle("Hotels List ");
