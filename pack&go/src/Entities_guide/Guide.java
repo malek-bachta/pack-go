@@ -5,6 +5,8 @@
  */
 package Entities_guide;
 
+import javafx.scene.control.TextField;
+
 /**
  *
  * @author Soulaima ben romdhan
@@ -38,6 +40,9 @@ public class Guide {
   
 
     public Guide() {
+    }
+
+    public Guide(int i, TextField nom, TextField prenom, TextField type, TextField prix) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

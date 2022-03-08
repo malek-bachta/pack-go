@@ -13,12 +13,7 @@
    <children>
       <AnchorPane layoutX="-11.0" layoutY="-9.0" prefHeight="705.0" prefWidth="279.0" styleClass="side_anchor" stylesheets="@fxml.css">
          <children>
-            <Button fx:id="back2" layoutX="6.0" layoutY="347.0" mnemonicParsing="false" onAction="#back2" prefHeight="49.0" prefWidth="279.0" text="Button" />
-            <ImageView fitHeight="154.0" fitWidth="154.0" layoutX="77.0" layoutY="73.0">
-               <image>
-                  <Image url="@../../../../../../Users/Soulaima%20ben%20romdhan/Downloads/274687501_2233903090091987_5680559546928755186_n.png" />
-               </image>
-            </ImageView>
+            <Button fx:id="back2" layoutX="6.0" layoutY="347.0" mnemonicParsing="false" onAction="#back2" prefHeight="49.0" prefWidth="279.0" styleClass="other_button" stylesheets="@fxml.css" text="return" />
          </children></AnchorPane>
       <Text fx:id="nom" layoutX="356.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom de l'agence" />
       <Text fx:id="prix" layoutX="356.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prix" />
@@ -41,6 +36,11 @@
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
+      <ImageView fitHeight="154.0" fitWidth="154.0" layoutX="77.0" layoutY="73.0">
+         <image>
+            <Image url="@../Utils/274970002_658978972108787_1172604264820518094_n.png" />
+         </image>
+      </ImageView>
 
    </children>
 </AnchorPane>

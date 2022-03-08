@@ -18,7 +18,7 @@ public interface Iguide <G> {
     
     public void ajouterguide(G g) throws SQLException;
     public List<G> afficheguide() throws SQLException;
-    public void modifierguide(G g)throws SQLException;
+    public List<G> modifierguide(int a, String b , String c ,String d,float m)throws SQLException;
     public void  supprimerguide (int g)throws SQLException;
     
 }

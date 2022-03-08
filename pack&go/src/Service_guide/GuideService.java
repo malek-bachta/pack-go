@@ -78,10 +78,9 @@ public class GuideService implements Iguide<Guide> {
             System.out.println(ex.getMessage());
         }
     }
-    
- 
-    
-    public List<Guide> modifiertransport(int id, String nom, String prenom, String type, float prix){
+     @Override
+    public List<Guide> modifierguide(int id, String nom, String prenom, String type, float prix)
+    {
         List<Guide> Guide = new ArrayList<>();
          try {
              String req= "UPDATE guide SET nom='" + nom + "',prenom='" +prenom+ "' ,type='" + type+ "',prix='" +prix+ "' WHERE id=" +id;
@@ -134,10 +133,29 @@ public class GuideService implements Iguide<Guide> {
           return Guide.stream().sorted(comparator).collect(Collectors.toList());
   }  
 
-    @Override
-    public void modifierguide(Guide g) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-        
+    
+    
+    
+    public List<Guide> afficheguideid(int id) throws SQLException {
 
+        List<Guide> Guide = new ArrayList<>();
+        String req = "select * from guide where id=3";
+        stm = connexion.createStatement();
+        //ensemble de resultat
+        ResultSet rst = stm.executeQuery(req);
+
+        while (rst.next()) {
+            Guide g = new Guide(rst.getInt("id"),//or rst.getInt(1)
+                    rst.getString("nom"),
+                    rst.getString("prenom"),
+                    rst.getString("type"),
+                    rst.getFloat("prix"));
+            Guide.add(g);
+        }
+        return Guide;
+    }
+
+   
+
+    
 }

@@ -43,6 +43,8 @@ public class AjouterGController implements Initializable {
     private Button afficherg;
     @FXML
     private Button modify;
+    @FXML
+    private Button back4;
 
     /**
      * Initializes the controller class.
@@ -101,5 +103,21 @@ public class AjouterGController implements Initializable {
     }
     
 }
+
+    @FXML
+    private void back4(ActionEvent event) {
+           Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/Gui_transport/ajouterT.fxml"));
+            Stage myWindow = (Stage) back4.getScene().getWindow();
+            Scene sc = new Scene(root);
+            myWindow.setScene(sc);
+            myWindow.setTitle("ajouter ");
+            //myWindow.setFullScreen(true);
+            myWindow.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
     
 }

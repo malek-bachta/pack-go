@@ -5,7 +5,9 @@
  */
 package pack.go;
 
+import Entities_guide.Guide;
 import Entities_transport.Transport;
+import Service_guide.GuideService;
 import Service_transport.TransportService;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -22,14 +24,11 @@ public class PackGo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        TransportService ts= new TransportService();
-        Transport p = new Transport("s","s",22f,"s","s");
-        
-        try {
-            ts.ajoutertransport(p);
-        } catch (SQLException ex) {
-            System.out.println("ollaa");        }
-        
+        GuideService ts = new GuideService();
+
+        ts.modifierguide(3, "aaa", "zzzz", "zzzz", 444f);
+        System.out.println("ollaa");
+
     }
-    
+
 }
