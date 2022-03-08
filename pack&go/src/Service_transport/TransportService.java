@@ -131,10 +131,7 @@ public class TransportService implements Itransport<Transport> {
     }
     
     
-     @Override
-    public void modifiertransport(Transport t) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
     
     public List<Transport> modifiertransport(int id, String type ,String  nomagence , float prix ,String duree , String destination ){
@@ -227,6 +224,11 @@ public class TransportService implements Itransport<Transport> {
         
     }
         */
+
+    @Override
+    public void modifiertransport(Transport t) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     
         

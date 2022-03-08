@@ -27,6 +27,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 
@@ -62,6 +64,8 @@ public class AfficherTController implements Initializable {
     
     @FXML
     private Button delete;
+    @FXML
+    private ImageView ref;
     /**
      * Initializes the controller class.
      * @param url
@@ -76,6 +80,7 @@ public class AfficherTController implements Initializable {
             // TODO
             List<Transport> t = new ArrayList<Transport>();
             t = ts.affichertransport();
+            t= ts.Tri();
             userData.clear();
             userData.addAll(t);
             table.setItems(userData);
@@ -149,6 +154,24 @@ public static int idt;
         ObservableList<Transport> data = FXCollections.observableArrayList(t);
         table.setItems(data);
     }
+
+   /* @FXML
+    private void ref(MouseEvent event) {
+    
+      Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("afficherT.fxml"));
+            Stage myWindow = (Stage) ref.getScene().getWindow();
+            Scene sc = new Scene(root);
+            myWindow.setScene(sc);
+            myWindow.setTitle(" ");
+            //myWindow.setFullScreen(true);
+            myWindow.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }  
+    
+    }*/
   
  
 }

@@ -9,9 +9,11 @@ import Service_guide.GuideService;
 
 import Entities_transport.Transport;
 import Service_transport.TransportService;
+import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.Duration;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -19,12 +21,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.BoxBlur;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -96,6 +100,8 @@ public class AjouterTController implements Initializable {
             ajouter.setEffect(null);
             System.out.println("Impossible");
         }
+      
+
     }
 
     @FXML

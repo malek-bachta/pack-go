@@ -155,6 +155,10 @@ public class GuideService implements Iguide<Guide> {
         return Guide;
     }
 
+    public void modifiertransport(int i, String type1, String nom, Float prix1, String duree1, String destination1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
 
     
