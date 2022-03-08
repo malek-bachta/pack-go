@@ -143,8 +143,8 @@ public class AjoutController implements Initializable {
         @FXML
         private Boolean verif_name(ActionEvent event) {
             Pattern p = Pattern.compile("[a-zA-Z]+");
-            Matcher m = p.matcher(adressH.getText());
-            if (m.find() && m.group().equals(adressH.getText())) {
+            Matcher m = p.matcher(nameH.getText());
+            if (m.find() && m.group().equals(nameH.getText())) {
                 return true;
             } else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -160,8 +160,8 @@ public class AjoutController implements Initializable {
         @FXML
         private Boolean verif_category(ActionEvent event) {
             Pattern p = Pattern.compile("[a-zA-Z]+");
-            Matcher m = p.matcher(adressH.getText());
-            if (m.find() && m.group().equals(adressH.getText())) {
+            Matcher m = p.matcher(categoryH.getText());
+            if (m.find() && m.group().equals(categoryH.getText())) {
                 return true;
             } else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);

@@ -36,7 +36,7 @@
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="add_hotel" layoutX="6.0" layoutY="298.0" mnemonicParsing="false" onAction="#add_hotel" prefHeight="54.0" prefWidth="273.0" styleClass="other_button" text="Add Hotel" textFill="#002366">
+                  <Button fx:id="add_hotel" layoutX="6.0" layoutY="304.0" mnemonicParsing="false" onAction="#add_hotel" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" text="Add Hotel" textFill="#002366">
                      <font>
                         <Font size="19.0" />
                      </font>

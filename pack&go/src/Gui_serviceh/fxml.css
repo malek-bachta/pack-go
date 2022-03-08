@@ -3,10 +3,9 @@
  */
 
 .other_button {
+    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1),10.0,0.0,0.0,10.0);
     -fx-background-color : #e6efef;
-    -fx-border-color:#231f20;
-    -fx-border-width:0.5px;
-    -fx-border-style:solid;
+    
 
 }
 
@@ -26,6 +25,7 @@
 }
 
 .button_add{
+    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1),10.0,0.0,0.0,10.0);
     -fx-background-color :  #99b8ce;
     -fx-background-radius: 30;
 }

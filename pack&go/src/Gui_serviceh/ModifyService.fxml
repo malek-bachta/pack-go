@@ -41,7 +41,7 @@
                                         <Font size="19.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="add_service" layoutX="6.0" layoutY="320.0" mnemonicParsing="false" onAction="#add_service" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" text="Add Service" textFill="#002366">
+                                <Button fx:id="add_service" layoutX="6.0" layoutY="326.0" mnemonicParsing="false" onAction="#add_service" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" text="Add Service" textFill="#002366">
                                     <font>
                                         <Font size="19.0" />
                                     </font>

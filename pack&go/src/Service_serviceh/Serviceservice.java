@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import utils.MyDB;
-    
+
 /**
  *
  * @author mbach
@@ -32,9 +32,22 @@ public class Serviceservice implements service<Services> {
 
     @Override
     public void ajouter(Services s) throws SQLException {
-        String req = "INSERT INTO `services` ( `formule`, `prix`, `sejours`, `activite`, `etat`) VALUES"
-                + " ('" + s.getFormule() + "', '" + s.getPrix() + "', '" + s.getSejours() + "', '" + s.getActivite()
-                + "', '" + s.getEtat() + "');";
+        String req = "INSERT INTO `services` ( `formule`, `prix`, `sejours`, `activite`, `etat`)" + " VALUES(?,?,?,?,?)";
+
+        String req1 = "UPDATE `services`s , `hotels`h SET s.id_hotel = h.idH WHERE s.etat = h.equipement ";
+        PreparedStatement pst = connexion.prepareStatement(req);
+        PreparedStatement pst1 = connexion.prepareStatement(req1);
+
+        pst.setString(1, s.getFormule());
+        pst.setFloat(2, s.getPrix());
+        pst.setString(3, s.getSejours());
+        pst.setString(4, s.getActivite());
+        pst.setString(5, s.getEtat());
+
+        pst.executeUpdate();
+        pst1.executeUpdate();
+        System.out.println(" Votre service  est Ajoutee ++ ");
+
         stm = connexion.createStatement();
         stm.executeUpdate(req);
     }
@@ -42,7 +55,7 @@ public class Serviceservice implements service<Services> {
     @Override
     public List afficher() throws SQLException {
         List<Services> services = new ArrayList<>();
-        String req = "select * from services";
+        String req = "select * from services ";
         stm = connexion.createStatement();
         //ensemble de resultat
         ResultSet rst = stm.executeQuery(req);
@@ -58,9 +71,10 @@ public class Serviceservice implements service<Services> {
         }
         return services;
     }
+
     public List afficherid(int id) throws SQLException {
         List<Services> services = new ArrayList<>();
-        String req = "select * from services where idS = 9";
+        String req = "select * from services where idS = 19";
         stm = connexion.createStatement();
         //ensemble de resultat
         ResultSet rst = stm.executeQuery(req);
@@ -77,26 +91,25 @@ public class Serviceservice implements service<Services> {
         return services;
     }
 
-        @Override
-    public List<Services> modifier( int id , String formule ,float prix ,String sejours, String activite, String etat ){
+    @Override
+    public List<Services> modifier(int id, String formule, float prix, String sejours, String activite, String etat) {
         List<Services> s = new ArrayList<>();
-         try {
-             String req="UPDATE services SET formule='"+formule
-                     +"', prix='" + prix
-                     +"', sejours='" + sejours
-                     +"', activite='" + activite
-                     +"', etat='" + etat
-                     +"' WHERE idS =" + id;
-          
-             PreparedStatement pre=connexion.prepareStatement(req);
+        try {
+            String req = "UPDATE `services`s , `hotels`h SET formule='" + formule
+                    + "', prix='" + prix
+                    + "', sejours='" + sejours
+                    + "', activite='" + activite
+                    + "', etat='" + etat
+                    + "' WHERE s.id_hotel=h.idH AND s.idS =" + id;
+
+            PreparedStatement pre = connexion.prepareStatement(req);
             pre.executeUpdate();
             System.out.println("service Modifiée");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return s;
-}
-   
+    }
 
     @Override
     public void supprimer(int id) throws SQLException {
@@ -110,6 +123,4 @@ public class Serviceservice implements service<Services> {
         }
     }
 
-   
-   
 }

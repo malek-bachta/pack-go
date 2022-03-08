@@ -16,6 +16,15 @@ public class Services {
     private String sejours;
     private String activite;
     private String etat;
+    private int id_hotel;
+
+    public int getId_hotel() {
+        return id_hotel;
+    }
+
+    public void setId_hotel(int id_hotel) {
+        this.id_hotel = id_hotel;
+    }
 
     public Services() {
     }
@@ -98,6 +107,8 @@ public class Services {
     public String toString() {
         return "services{" + "idS=" + idS + ", formule=" + formule + ", prix=" + prix + ", sejours=" + sejours + ", activite=" + activite + ", etat=" + etat + '}';
     }
+
+
     
     
     

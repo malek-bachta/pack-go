@@ -25,7 +25,7 @@
                   <TextField fx:id="sejourS" layoutX="485.0" layoutY="257.0" onAction="#verif_sejours" prefHeight="38.0" prefWidth="308.0" promptText="Sejours" />
                   <TextField fx:id="priceS" layoutX="485.0" layoutY="306.0" onAction="#verif_prix" prefHeight="38.0" prefWidth="308.0" promptText="Price" />
                   <TextField fx:id="activityS" layoutX="485.0" layoutY="359.0" onAction="#verif_activity" prefHeight="38.0" prefWidth="308.0" promptText="activity" />
-                  <Button fx:id="add" layoutX="569.0" layoutY="492.0" mnemonicParsing="false" onAction="#add_service" prefHeight="49.0" prefWidth="141.0" styleClass="button_add" text="Add Service" textFill="#002366">
+                  <Button fx:id="add" layoutX="569.0" layoutY="492.0" mnemonicParsing="false" onAction="#add_service" prefHeight="49.0" prefWidth="141.0" styleClass="button_add" stylesheets="@fxml.css" text="Add Service" textFill="#002366">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -40,15 +40,15 @@
                               <Image url="@../Utils/37453%20%5BConverted%5D.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="show_service" layoutX="6.0" layoutY="250.0" mnemonicParsing="false" onAction="#show_service" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" text="Show Services" textFill="#002366">
+                        <Button fx:id="show_service" layoutX="6.0" layoutY="250.0" mnemonicParsing="false" onAction="#show_service" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@../Gui_hotel/fxml.css" text="Show Services" textFill="#002366">
                            <font>
                               <Font size="19.0" />
                            </font></Button>
-                        <Button fx:id="modify" layoutX="6.0" layoutY="347.0" mnemonicParsing="false" onAction="#modify" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" text="Modify Service" textFill="#002366">
+                        <Button fx:id="modify" layoutX="6.0" layoutY="358.0" mnemonicParsing="false" onAction="#modify" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@../Gui_hotel/fxml.css" text="Modify Service" textFill="#002366">
                            <font>
                               <Font size="19.0" />
                            </font></Button>
-                        <Button fx:id="add_hotel" layoutX="6.0" layoutY="298.0" mnemonicParsing="false" onAction="#add_hotel" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" text="Add Hotel" textFill="#002366">
+                        <Button fx:id="add_hotel" layoutX="6.0" layoutY="304.0" mnemonicParsing="false" onAction="#add_hotel" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@../Gui_hotel/fxml.css" text="Add Hotel" textFill="#002366">
                            <font>
                               <Font size="19.0" />
                            </font></Button>

@@ -35,17 +35,17 @@
                         <Image url="@../Utils/37453%20%5BConverted%5D.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="show_list" layoutX="6.0" layoutY="250.0" mnemonicParsing="false" onAction="#show_list" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" text="Show Hotels" textFill="#002366">
+                  <Button fx:id="show_list" layoutX="6.0" layoutY="243.0" mnemonicParsing="false" onAction="#show_list" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" text="Show Hotels" textFill="#002366">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="modify" layoutX="6.0" layoutY="347.0" mnemonicParsing="false" onAction="#modify" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" text="Modify Hotel" textFill="#002366">
+                  <Button fx:id="modify" layoutX="6.0" layoutY="353.0" mnemonicParsing="false" onAction="#modify" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" text="Modify Hotel" textFill="#002366">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="add_service" layoutX="6.0" layoutY="298.0" mnemonicParsing="false" onAction="#add_service" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" text="Add Service" textFill="#002366">
+                  <Button fx:id="add_service" layoutX="6.0" layoutY="298.0" mnemonicParsing="false" onAction="#add_service" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@fxml.css" text="Add Service" textFill="#002366">
                      <font>
                         <Font size="19.0" />
                      </font>
