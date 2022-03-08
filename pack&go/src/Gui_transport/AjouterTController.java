@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +24,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.BoxBlur;
 import javafx.stage.Stage;
 
 /**
@@ -61,6 +64,18 @@ public class AjouterTController implements Initializable {
 
     @FXML
     private void ajoutertransport1(ActionEvent event) {
+        if((type.getText().isEmpty()==false)&&
+                (nom.getText().isEmpty()==false)&&
+                (prix.getText().isEmpty()==false)&&
+                (duree.getText().isEmpty()==false)&&
+                (destination.getText().isEmpty()==false)&&
+                (verif_type())&&
+                (verif_name())&&
+                (verif_price())&&
+                (verif_duree())&&
+                (verif_destination())
+                ){            
+        
         TransportService ts= new TransportService();
         Transport p = new Transport(type.getText(),nom.getText(),Float.parseFloat(prix.getText()),duree.getText(),destination.getText());
         
@@ -70,6 +85,16 @@ public class AjouterTController implements Initializable {
           
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+        }}
+        else{
+             BoxBlur blur = new BoxBlur(3, 3, 3);
+            ajouter.setEffect(blur);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR ");
+            alert.setContentText("Please check your fields!!");
+            alert.showAndWait();
+            ajouter.setEffect(null);
+            System.out.println("Impossible");
         }
     }
 
@@ -125,6 +150,87 @@ public class AjouterTController implements Initializable {
     }
     
     
+    @FXML
+        private Boolean verif_name( ) {
+            Pattern p = Pattern.compile("[a-zA-Z]+");
+            Matcher m = p.matcher(nom.getText());
+            if (m.find() && m.group().equals(nom.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput Transport name !!");
+                alert.showAndWait();
+                return false;
+            }
+
+        }
+
+    @FXML
+    private boolean verif_type() {
+         Pattern p = Pattern.compile("[a-zA-Z]+");
+            Matcher m = p.matcher(type.getText());
+            if (m.find() && m.group().equals(type.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput Transport type !!");
+                alert.showAndWait();
+                return false;
+            }
+    }
+
+    @FXML
+    private boolean verif_price() {
+         Pattern p = Pattern.compile("[0-9]+");
+            Matcher m = p.matcher(prix.getText());
+            if (m.find() && m.group().equals(prix.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput Transport prix !!");
+                alert.showAndWait();
+                return false;
+            }
+    }
+
+    @FXML
+    private boolean verif_duree() {
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+            Matcher m = p.matcher(duree.getText());
+            if (m.find() && m.group().equals(duree.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput Transport duree !!");
+                alert.showAndWait();
+                return false;
+            }
+        
+    }
+
+    @FXML
+    private boolean verif_destination() {
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+            Matcher m = p.matcher(destination.getText());
+            if (m.find() && m.group().equals(destination.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput Transport destination !!");
+                alert.showAndWait();
+                return false;
+            }
+    }
     
     
     

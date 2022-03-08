@@ -11,11 +11,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="699.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_transport.AjouterTController">
    <children>
-      <TextField fx:id="type" layoutX="485.0" layoutY="206.0" prefHeight="38.0" prefWidth="308.0" />
-      <TextField fx:id="nom" layoutX="485.0" layoutY="257.0" prefHeight="38.0" prefWidth="308.0" />
-      <TextField fx:id="prix" layoutX="485.0" layoutY="306.0" prefHeight="38.0" prefWidth="308.0" />
-      <TextField fx:id="duree" layoutX="485.0" layoutY="359.0" prefHeight="38.0" prefWidth="308.0" />
-      <TextField fx:id="destination" layoutX="489.0" layoutY="407.0" prefHeight="38.0" prefWidth="308.0" />
+      <TextField fx:id="type" layoutX="485.0" layoutY="206.0" onAction="#verif_type" prefHeight="38.0" prefWidth="308.0" />
+      <TextField fx:id="nom" layoutX="485.0" layoutY="257.0" onAction="#verif_name" prefHeight="38.0" prefWidth="308.0" />
+      <TextField fx:id="prix" layoutX="485.0" layoutY="306.0" onAction="#verif_price" prefHeight="38.0" prefWidth="308.0" />
+      <TextField fx:id="duree" layoutX="485.0" layoutY="359.0" onAction="#verif_duree" prefHeight="38.0" prefWidth="308.0" />
+      <TextField fx:id="destination" layoutX="489.0" layoutY="407.0" onAction="#verif_destination" prefHeight="38.0" prefWidth="308.0" />
       <Text fill="#002366" layoutX="366.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="type" wrappingWidth="102.0" />
       <Text fill="#002366" layoutX="361.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom agence " />
       <Text fill="#002366" layoutX="367.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prix" />
@@ -54,6 +54,11 @@
       <ImageView fitHeight="154.0" fitWidth="154.0" layoutX="77.0" layoutY="73.0">
          <image>
             <Image url="@../Utils/274970002_658978972108787_1172604264820518094_n.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="118.0" fitWidth="118.0" layoutX="580.0" layoutY="73.0">
+         <image>
+            <Image url="@../Utils/images.png" />
          </image>
       </ImageView>
    </children>

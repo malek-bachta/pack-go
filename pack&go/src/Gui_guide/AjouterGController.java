@@ -11,14 +11,18 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.BoxBlur;
 import javafx.stage.Stage;
 
 /**
@@ -56,6 +60,20 @@ public class AjouterGController implements Initializable {
 
     @FXML
     private void ajoutg(ActionEvent event) {
+         if(
+                (nom.getText().isEmpty()==false)&&
+                (prenom.getText().isEmpty()==false)&&
+                (type.getText().isEmpty()==false)&&
+                (prix.getText().isEmpty()==false)&&
+                (verif_name())&&
+                (verif_lastname())&&
+                (verif_type())&&
+                (verif_prix())
+                )
+         {
+        
+        
+        
      GuideService gs= new GuideService();
         Guide g = new Guide(nom.getText(),prenom.getText() ,type.getText(),Float.parseFloat(prix.getText()));
         
@@ -68,6 +86,19 @@ public class AjouterGController implements Initializable {
         }
     
     }
+         else{
+             BoxBlur blur = new BoxBlur(3, 3, 3);
+            ajoutg.setEffect(blur);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR ");
+            alert.setContentText("Please check your fields!!");
+            alert.showAndWait();
+            ajoutg.setEffect(null);
+            System.out.println("Impossible");
+        }
+         
+    }
+    
 
     @FXML
     private void afficherg(ActionEvent event) {
@@ -118,6 +149,71 @@ public class AjouterGController implements Initializable {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+
+    @FXML
+    private boolean verif_name() {
+         Pattern p = Pattern.compile("[a-zA-Z]+");
+            Matcher m = p.matcher(nom.getText());
+            if (m.find() && m.group().equals(nom.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput guide name !!");
+                alert.showAndWait();
+                return false;
+            }
+    }
+
+    @FXML
+    private boolean verif_lastname() {
+         Pattern p = Pattern.compile("[a-zA-Z]+");
+            Matcher m = p.matcher(prenom.getText());
+            if (m.find() && m.group().equals(prenom.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput guide last name !!");
+                alert.showAndWait();
+                return false;
+            }
+    }
+
+    @FXML
+    private boolean verif_type() {
+         Pattern p = Pattern.compile("[a-zA-Z]+");
+            Matcher m = p.matcher(type.getText());
+            if (m.find() && m.group().equals(type.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput guide type !!");
+                alert.showAndWait();
+                return false;
+            }
+    }
+
+    @FXML
+    private boolean verif_prix() {
+     Pattern p = Pattern.compile("[0-9]+");
+            Matcher m = p.matcher(prix.getText());
+            if (m.find() && m.group().equals(prix.getText())) {
+                return true;
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setHeaderText(null);
+                alert.setContentText("Wrong Imput guide prix !!");
+                alert.showAndWait();
+                return false;
+            }
+    
     }
     
 }
