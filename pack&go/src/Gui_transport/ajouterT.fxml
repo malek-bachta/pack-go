@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,40 +11,50 @@
 
 <AnchorPane id="AnchorPane" prefHeight="699.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_transport.AjouterTController">
    <children>
-      <TextField fx:id="type" layoutX="553.0" layoutY="97.0" />
-      <TextField fx:id="nom" layoutX="553.0" layoutY="145.0" />
-      <TextField fx:id="prix" layoutX="553.0" layoutY="197.0" />
-      <TextField fx:id="duree" layoutX="553.0" layoutY="245.0" />
-      <TextField fx:id="destination" layoutX="553.0" layoutY="296.0" />
-      <Text layoutX="437.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="type" wrappingWidth="102.0" />
-      <Text layoutX="460.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom agence " />
-      <Text layoutX="460.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prix" />
-      <Text layoutX="460.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="duree" />
-      <Text layoutX="460.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="destination" />
-      <Button fx:id="ajouter" layoutX="600.0" layoutY="377.0" mnemonicParsing="false" onAction="#ajoutertransport1" text="ajouter" />
-      <AnchorPane layoutX="-6.0" prefHeight="705.0" prefWidth="279.0" style="-fx-background-color: #582900;">
+      <TextField fx:id="type" layoutX="485.0" layoutY="206.0" prefHeight="38.0" prefWidth="308.0" />
+      <TextField fx:id="nom" layoutX="485.0" layoutY="257.0" prefHeight="38.0" prefWidth="308.0" />
+      <TextField fx:id="prix" layoutX="485.0" layoutY="306.0" prefHeight="38.0" prefWidth="308.0" />
+      <TextField fx:id="duree" layoutX="485.0" layoutY="359.0" prefHeight="38.0" prefWidth="308.0" />
+      <TextField fx:id="destination" layoutX="489.0" layoutY="407.0" prefHeight="38.0" prefWidth="308.0" />
+      <Text fill="#002366" layoutX="366.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="type" wrappingWidth="102.0" />
+      <Text fill="#002366" layoutX="361.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom agence " />
+      <Text fill="#002366" layoutX="367.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prix" />
+      <Text fill="#002366" layoutX="372.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="duree" />
+      <Text fill="#002366" layoutX="367.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="destination" />
+      <Button fx:id="ajouter" layoutX="569.0" layoutY="535.0" mnemonicParsing="false" onAction="#ajoutertransport1" prefHeight="49.0" prefWidth="141.0" styleClass="button_add" stylesheets="@fxml.css" text="ajouter" />
+      <AnchorPane layoutX="-11.0" layoutY="-9.0" prefHeight="705.0" prefWidth="279.0" styleClass="side_anchor" stylesheets="@fxml.css">
          <children>
-            <ImageView fitHeight="100.0" fitWidth="143.0" layoutX="68.0" layoutY="41.0">
+            <ImageView fitHeight="154.0" fitWidth="154.0" layoutX="77.0" layoutY="73.0">
                <image>
                   <Image url="@../utils/274687501_2233903090091987_5680559546928755186_n.png" />
                </image>
             </ImageView>
-            <Button fx:id="afficherA" layoutX="68.0" layoutY="252.0" mnemonicParsing="false" onAction="#afficherA" prefHeight="42.0" prefWidth="167.0" text="show transport">
+            <Button fx:id="afficherA" layoutX="6.0" layoutY="250.0" mnemonicParsing="false" onAction="#afficherA" prefHeight="49.0" prefWidth="279.0" styleClass="other_button" stylesheets="@fxml.css" text="show transport">
                <font>
                   <Font size="19.0" />
                </font>
             </Button>
-            <Button fx:id="guide" layoutX="68.0" layoutY="363.0" mnemonicParsing="false" onAction="#guide" prefHeight="42.0" prefWidth="167.0" text="add guide">
+            <Button fx:id="guide" layoutX="6.0" layoutY="298.0" mnemonicParsing="false" onAction="#guide" prefHeight="49.0" prefWidth="279.0" styleClass="other_button" stylesheets="@fxml.css" text="add guide">
                <font>
                   <Font size="19.0" />
                </font>
             </Button>
-            <Button layoutX="68.0" layoutY="472.0" mnemonicParsing="false" text="modify transport">
+            <Button fx:id="modif" layoutX="6.0" layoutY="347.0" mnemonicParsing="false" onAction="#modif" prefHeight="49.0" prefWidth="279.0" styleClass="other_button" stylesheets="@fxml.css" text="modify transport">
                <font>
                   <Font size="19.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
+      <ImageView fitHeight="31.0" fitWidth="118.0" layoutX="954.0" layoutY="26.0">
+         <image>
+            <Image url="@../../../../../../Users/Soulaima%20ben%20romdhan/Downloads/275394391_350537970322676_7164695504554048342_n.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="922.0" layoutY="643.0" prefHeight="49.0" prefWidth="173.0" text="Pack&amp;go@gmail.com">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

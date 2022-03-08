@@ -47,6 +47,9 @@ public class AjouterTController implements Initializable {
     private Button afficherA;
     @FXML
     private Button guide;
+    @FXML
+    private Button modif;
+
 
     /**
      * Initializes the controller class.
@@ -89,7 +92,7 @@ public class AjouterTController implements Initializable {
      private void guide(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("ajouterG.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/Gui_guide/ajouterG.fxml"));
             Stage myWindow = (Stage) guide.getScene().getWindow();
             Scene sc = new Scene(root);
             myWindow.setScene(sc);
@@ -100,7 +103,29 @@ public class AjouterTController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
+
+
+
+    @FXML
+    private void modif(ActionEvent event) {
+        
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("modifier.fxml"));
+            Stage myWindow = (Stage) modif.getScene().getWindow();
+            Scene sc = new Scene(root);
+            myWindow.setScene(sc);
+            myWindow.setTitle("modifier ");
+            //myWindow.setFullScreen(true);
+            myWindow.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
     
-  
-   
+    }
+    }
+    
+    
+    
+    
+    
 }

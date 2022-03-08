@@ -9,15 +9,15 @@
 
 <AnchorPane id="AnchorPane" prefHeight="699.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_guide.AjouterGController">
    <children>
-      <AnchorPane prefHeight="705.0" prefWidth="279.0" style="-fx-background-color: #582900;">
+      <AnchorPane prefHeight="705.0" prefWidth="279.0" styleClass="side_anchor" stylesheets="@fxml.css">
          <children>
             <ImageView fitHeight="118.0" fitWidth="169.0" layoutX="55.0" layoutY="40.0">
                <image>
                   <Image url="@../../../../../../Users/Soulaima%20ben%20romdhan/Downloads/274687501_2233903090091987_5680559546928755186_n.png" />
                </image>
             </ImageView>
-            <Button layoutX="97.0" layoutY="260.0" mnemonicParsing="false" onAction="#afficherg" prefHeight="59.0" prefWidth="130.0" text="show guide" />
-            <Button layoutX="97.0" layoutY="337.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="130.0" text="modify guide" />
+            <Button fx:id="afficherg" layoutX="97.0" layoutY="260.0" mnemonicParsing="false" onAction="#afficherg" prefHeight="59.0" prefWidth="130.0" text="show guide" />
+            <Button fx:id="modify" layoutX="97.0" layoutY="337.0" mnemonicParsing="false" onAction="#modify" prefHeight="59.0" prefWidth="130.0" text="modify guide" />
          </children></AnchorPane>
       <Text layoutX="454.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom" />
       <Text layoutX="454.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prenom" />

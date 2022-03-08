@@ -39,6 +39,10 @@ public class AjouterGController implements Initializable {
     private TextField prix;
     @FXML
     private Button ajoutg;
+    @FXML
+    private Button afficherg;
+    @FXML
+    private Button modify;
 
     /**
      * Initializes the controller class.
@@ -67,7 +71,7 @@ public class AjouterGController implements Initializable {
     private void afficherg(ActionEvent event) {
             Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("afficherT.fxml"));
+            root = FXMLLoader.load(getClass().getResource("afficherG.fxml"));
             Stage myWindow = (Stage) afficherg.getScene().getWindow();
             Scene sc = new Scene(root);
             myWindow.setScene(sc);
@@ -79,5 +83,23 @@ public class AjouterGController implements Initializable {
         }
     
     }
+    
+    
+      @FXML
+    private void modify(ActionEvent event) {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("modifierG.fxml"));
+            Stage myWindow = (Stage) modify.getScene().getWindow();
+            Scene sc = new Scene(root);
+            myWindow.setScene(sc);
+            myWindow.setTitle("modifier ");
+            //myWindow.setFullScreen(true);
+            myWindow.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+    }
+    
+}
     
 }

@@ -9,7 +9,7 @@
    <children>
       <AnchorPane prefHeight="699.0" prefWidth="1099.0" style="-fx-background-color: #582900;">
          <children>
-            <TableView layoutX="128.0" layoutY="55.0" prefHeight="497.0" prefWidth="827.0">
+            <TableView fx:id="table" layoutX="128.0" layoutY="55.0" prefHeight="497.0" prefWidth="827.0">
               <columns>
                 <TableColumn fx:id="id" prefWidth="75.0" text="id guide" />
                 <TableColumn fx:id="nom" prefWidth="75.0" text="nom" />

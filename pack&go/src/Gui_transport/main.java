@@ -31,6 +31,7 @@ public class main extends Application {
     public void start(Stage primaryStage) {
 
         try {
+
             Parent root = FXMLLoader.load(getClass().getResource("ajouterT.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setTitle("ajouter");

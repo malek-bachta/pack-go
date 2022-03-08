@@ -5,7 +5,6 @@
  */
 package Service_transport;
 
-import Service_guide.*;
 import Entities_transport.Transport;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -67,6 +66,29 @@ public class TransportService implements Itransport<Transport> {
         return Transport;
     }
 
+    public List<Transport> affichertransportid(int i) throws SQLException {
+
+        List<Transport> Transport = new ArrayList<>();
+        String req = "select * from transport where id=38";
+        stm = connexion.createStatement();
+        //ensemble de resultat
+        ResultSet rst = stm.executeQuery(req);
+
+        while (rst.next()) {
+            Transport t = new Transport(rst.getInt("id"),//or rst.getInt(1)
+                    rst.getString("type"),
+                    rst.getString("nomagence"),
+                    rst.getFloat("prix"),
+                    rst.getString("duree"),
+                    rst.getString("destination"));
+            Transport.add(t);
+        }
+        return Transport;
+    }
+
+    
+    
+    
     @Override
     public void supprimertransport(int id) throws SQLException {
         String req = "DELETE FROM transport WHERE  id=" + id;
@@ -205,7 +227,8 @@ public class TransportService implements Itransport<Transport> {
         
     }
         */
-        
+
+    
         
    
 
