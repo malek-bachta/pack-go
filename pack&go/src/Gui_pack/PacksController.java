@@ -67,8 +67,8 @@ public class PacksController implements Initializable {
          packs p = new packs( nom_pack, texte, service, guide, destination);
          Servicepack pa = new Servicepack () {};
          try {
-         pa.ajouter(p);
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+         pa.ajouter1(p);
+             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setContentText("offre is added successfully!");
             alert.show();

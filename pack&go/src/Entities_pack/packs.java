@@ -9,19 +9,23 @@ package Entities_pack;
  *
  * @author MSI
  */
-public class packs { 
-    private  int id_pack ;
-    public String nom_pack,texte,service,guide,destination ; 
+public class packs {
 
-    public packs(int id_pack, String nom_pack, String texte, String service, String guide, String destination) {
+    private int id_pack, budget_pack;
+    public String nom_pack, texte, service, guide, destination;
+
+    public packs(int id_pack, String nom_pack, String texte, String service, String guide, String destination,int budget_pack) {
         this.id_pack = id_pack;
         this.nom_pack = nom_pack;
         this.texte = texte;
         this.service = service;
         this.guide = guide;
         this.destination = destination;
+        this.budget_pack = budget_pack;
+
     }
-     public packs() {
+
+    public packs() {
     }
 
     public packs(String nom_pack, String texte, String service, String guide, String destination) {
@@ -31,10 +35,29 @@ public class packs {
         this.guide = guide;
         this.destination = destination;
     }
+  public packs(String nom_pack, String texte, String service, String guide, String destination,int budget_pack) {
+        this.nom_pack = nom_pack;
+        this.texte = texte;
+        this.service = service;
+        this.guide = guide;
+        this.destination = destination;
+    }
 
+    
 
+  
 
    
+   
+
+    public int getBudget_pack() {
+        return budget_pack;
+    }
+
+    public void setBudget_pack(int budget_pack) {
+        this.budget_pack = budget_pack;
+    }
+
     public int getId_pack() {
         return id_pack;
     }
@@ -87,5 +110,5 @@ public class packs {
     public String toString() {
         return "packs{" + "id_pack=" + id_pack + ", nom_pack=" + nom_pack + ", text=" + texte + ", service=" + service + ", guide=" + guide + ", destination=" + destination + '}';
     }
-     
+
 }

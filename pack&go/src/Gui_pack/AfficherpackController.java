@@ -59,6 +59,8 @@ public class AfficherpackController implements Initializable {
     private Button supp;
     @FXML
     private Button mod;
+    @FXML
+    private TableColumn<packs, Integer> budget_pack;
 
     /**
      * Initializes the controller class.
@@ -92,6 +94,9 @@ public class AfficherpackController implements Initializable {
             );
             destination.setCellValueFactory(
                     new PropertyValueFactory<>("destination")
+            );
+            budget_pack.setCellValueFactory(
+                    new PropertyValueFactory<>("budget_pack")
             );
 
         } catch (SQLException ex) {

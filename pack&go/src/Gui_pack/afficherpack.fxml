@@ -15,6 +15,7 @@
             <TableColumn fx:id="service" prefWidth="76.0" text="service" />
             <TableColumn fx:id="guide" prefWidth="117.0" text="guide" />
             <TableColumn fx:id="destination" prefWidth="127.0" text="destination" />
+            <TableColumn fx:id="budget_pack" prefWidth="127.0" text="budget_pack" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

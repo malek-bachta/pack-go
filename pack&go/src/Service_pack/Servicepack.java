@@ -29,23 +29,48 @@ public  class Servicepack implements Iservice<packs> {
 
     @Override
     public void ajouter(packs p) throws SQLException {
-        String req = "INSERT INTO `packs`(`nom_pack`,`texte`,`service`,`guide`,`destination`) VALUES ('" + p.getNom_pack() + "','" + p.getTexte() + "','" + p.getService() + "','" + p.getGuide() + "','" + p.getDestination() + "');";
+        String req = "INSERT INTO `packs`(`nom_pack`,`texte`,`service`,`guide`,`destination`) VALUES ('" + p.getNom_pack() + "',"
+                + "'" + p.getTexte() + "','" + p.getService() + "','" + p.getGuide() + "','" + p.getDestination() + "');";
         Statement st = cnx.createStatement();
         st.executeUpdate(req);
 
     }
+/*public void ajouter(Services s) throws SQLException {
+        String req = "INSERT INTO services ( formule, prix, sejours, activite, etat)" + " VALUES(?,?,?,?,?)";
 
+        String req1 = "UPDATE servicess , hotelsh SET s.id_hotel = h.idH WHERE s.etat = h.equipement ";
+        PreparedStatement pst = connexion.prepareStatement(req);
+        PreparedStatement pst1 = connexion.prepareStatement(req1);
+
+        pst.setString(1, s.getFormule());
+        pst.setFloat(2, s.getPrix());
+        pst.setString(3, s.getSejours());
+        pst.setString(4, s.getActivite());
+        pst.setString(5, s.getEtat());
+
+        pst.executeUpdate();
+        pst1.executeUpdate();
+        System.out.println(" Votre service  est Ajoutee ++ ");
+
+        stm = connexion.createStatement();
+        stm.executeUpdate(req);
+    }*/
     public void ajouter1(packs p) throws SQLException {
-        String req = "INSERT INTO `packs`(`nom_pack`,`texte`,`service`,`guide`,`destination`) VALUES ( ?,?,?,?,?);";
+  String req = "INSERT INTO packs (nom_pack, texte, service, guide, destination)"+" VALUES (?,?,?,?,?)";
+        String req1 = "UPDATE packs , offre  SET packs.budget_pack = offre.budget WHERE packs.nom_pack =offre.nom_offre";
         PreparedStatement pre = cnx.prepareStatement(req);
+        PreparedStatement pre1 = cnx.prepareStatement(req1);
         pre.setString(1, p.getNom_pack());
-        pre.setString(2, p.getTexte());
+        pre.setString(2,  p.getTexte());
         pre.setString(3, p.getService());
-        pre.setString(4, p.getGuide());
+        pre.setString(4, p.getGuide() );
         pre.setString(5, p.getDestination());
 
-        pre.executeUpdate(req);
+        pre.executeUpdate();
+        pre1.executeUpdate();
         System.out.println("success!");
+          Statement st = cnx.createStatement();
+        st.executeUpdate(req);
 
     }
 
@@ -102,7 +127,9 @@ public  class Servicepack implements Iservice<packs> {
                     rst.getString("texte"),
                     rst.getString("service"),
                     rst.getString("guide"),
-                    rst.getString("destination"));
+                    rst.getString("destination"),
+                    rst.getInt("budget_pack")
+            );
             packs.add(p);
         }
         return packs;
