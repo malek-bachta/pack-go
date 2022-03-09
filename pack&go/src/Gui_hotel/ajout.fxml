@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_hotel.AjoutController">
    <stylesheets>
@@ -74,6 +75,8 @@
                   <Image url="@../Utils/title.png" />
                </image>
             </ImageView>
+            <Rating fx:id="rate" layoutX="866.0" layoutY="503.0" rating="0.0" />
+            <Button fx:id="subb" layoutX="947.0" layoutY="560.0" mnemonicParsing="false" onAction="#subb" text="Button" />
          </children>
       </AnchorPane>
    </children>

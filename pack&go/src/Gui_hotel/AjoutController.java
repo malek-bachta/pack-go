@@ -25,6 +25,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.controlsfx.control.Rating;
 
 /**
  * FXML Controller class
@@ -55,6 +56,10 @@ public class AjoutController implements Initializable {
     private Button add_service;
     @FXML
     private Button modify;
+    @FXML
+    private Rating rate;
+    @FXML
+    private Button subb;
 
     /**
      * Initializes the controller class.
@@ -256,5 +261,10 @@ public class AjoutController implements Initializable {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+
+    @FXML
+    private void subb(ActionEvent event) {
+        System.out.println( rate.getRating());
     }
 }
