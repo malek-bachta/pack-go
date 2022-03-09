@@ -5,6 +5,7 @@
  */
 package Gui_transport;
 
+import Entities_transport.Transport;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -18,14 +19,24 @@ import javafx.scene.image.ImageView;
  * @author Soulaima ben romdhan
  */
 public class Item_transportController implements Initializable {
+private Transport transport;
+    @FXML
+    private Label typ;
+    @FXML
+    private Label nom;
+    @FXML
+    private Label prix;
+    @FXML
+    private Label dest;
+    
+    public void setData(Transport t) {
 
-    @FXML
-    private Label type1;
-    @FXML
-    private Label prix1;
-    @FXML
-    private ImageView img;
-
+        this.transport = t;
+        typ.setText(t.getType());
+        nom.setText(t.getNomagence());
+      prix.setText("" +t.getPrix());
+        dest.setText(t.getDestination());
+    }
     /**
      * Initializes the controller class.
      */
