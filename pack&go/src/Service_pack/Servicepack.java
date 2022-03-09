@@ -35,26 +35,7 @@ public  class Servicepack implements Iservice<packs> {
         st.executeUpdate(req);
 
     }
-/*public void ajouter(Services s) throws SQLException {
-        String req = "INSERT INTO services ( formule, prix, sejours, activite, etat)" + " VALUES(?,?,?,?,?)";
 
-        String req1 = "UPDATE servicess , hotelsh SET s.id_hotel = h.idH WHERE s.etat = h.equipement ";
-        PreparedStatement pst = connexion.prepareStatement(req);
-        PreparedStatement pst1 = connexion.prepareStatement(req1);
-
-        pst.setString(1, s.getFormule());
-        pst.setFloat(2, s.getPrix());
-        pst.setString(3, s.getSejours());
-        pst.setString(4, s.getActivite());
-        pst.setString(5, s.getEtat());
-
-        pst.executeUpdate();
-        pst1.executeUpdate();
-        System.out.println(" Votre service  est Ajoutee ++ ");
-
-        stm = connexion.createStatement();
-        stm.executeUpdate(req);
-    }*/
     public void ajouter1(packs p) throws SQLException {
   String req = "INSERT INTO packs (nom_pack, texte, service, guide, destination)"+" VALUES (?,?,?,?,?)";
         String req1 = "UPDATE packs , offre  SET packs.budget_pack = offre.budget WHERE packs.nom_pack =offre.nom_offre";

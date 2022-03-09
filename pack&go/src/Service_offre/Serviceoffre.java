@@ -6,7 +6,6 @@
 package Service_offre;
 
 import Entities_offre.offre;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Util;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

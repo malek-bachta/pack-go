@@ -21,11 +21,11 @@ public class PackGo extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/Gui_offre/offre.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Gui_pack/front_packs.fxml"));
 
             Scene scene = new Scene(root);
 
-            primaryStage.setTitle("offre!");
+            primaryStage.setTitle("");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {

@@ -111,4 +111,6 @@ public class packs {
         return "packs{" + "id_pack=" + id_pack + ", nom_pack=" + nom_pack + ", text=" + texte + ", service=" + service + ", guide=" + guide + ", destination=" + destination + '}';
     }
 
+    
+
 }
