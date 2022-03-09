@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guii;
+package Gui_transport;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -11,34 +11,32 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
  *
  * @author Soulaima ben romdhan
  */
-public class AfficherTController implements Initializable {
+public class Front_transportController implements Initializable {
 
     @FXML
-    private Button back;
+    private Button search;
     @FXML
-    private TableView<?> table;
+    private Button add;
     @FXML
-    private TableColumn<?, ?> id;
+    private VBox choose;
     @FXML
-    private TableColumn<?, ?> type;
+    private Label type;
     @FXML
-    private TableColumn<?, ?> nom;
+    private Label prix;
     @FXML
-    private TableColumn<?, ?> prix;
+    private ScrollPane scroll;
     @FXML
-    private TableColumn<?, ?> duree;
-    @FXML
-    private TableColumn<?, ?> destination;
-    @FXML
-    private Button delete;
+    private GridPane grid;
 
     /**
      * Initializes the controller class.
@@ -49,11 +47,11 @@ public class AfficherTController implements Initializable {
     }    
 
     @FXML
-    private void affichertranspo(ActionEvent event) {
+    private void search(ActionEvent event) {
     }
 
     @FXML
-    private void delete(ActionEvent event) {
+    private void add(ActionEvent event) {
     }
     
 }
