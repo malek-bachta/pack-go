@@ -57,7 +57,7 @@ public class offre {
 
     @Override
     public String toString() {
-        return "offre{" + "id_of=" + id_of + ", budget=" + budget + ", nom_offre=" + nom_offre + '}';
+        return "\n offre{" + " id_of=" + id_of + "--- budget=" + budget + " nom_offre=" + nom_offre + '}';
     }
 
 }

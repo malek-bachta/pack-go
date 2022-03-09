@@ -19,7 +19,7 @@
       <Label layoutX="435.0" layoutY="195.0" text="budget" />
       <TextField fx:id="tfbudget" layoutX="696.0" layoutY="190.0" />
       <Label layoutX="423.0" layoutY="118.0" text="nom_offre:" />
-      <TextField fx:id="tfnom" layoutX="696.0" layoutY="113.0" />
+      <TextField fx:id="tfnom" layoutX="696.0" layoutY="113.0" onAction="#very_nom" />
       <TextArea fx:id="listp" layoutX="354.0" layoutY="240.0" prefHeight="380.0" prefWidth="659.0" wrapText="true" />
       <Text layoutX="533.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OFFRE">
          <font>
@@ -50,6 +50,7 @@
          <image>
             <Image url="@../Utils/logo.png" />
          </image>
-      </ImageView>   
+      </ImageView>
+      <AnchorPane fx:id="ajout" layoutX="283.0" prefHeight="91.0" prefWidth="71.0" />   
    </children>
 </AnchorPane>
