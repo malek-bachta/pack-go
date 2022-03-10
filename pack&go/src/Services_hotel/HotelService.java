@@ -33,9 +33,9 @@ public class HotelService implements service<Hotels> {
     @Override
     public void ajouter(Hotels h) throws SQLException {
 
-        String req = "INSERT INTO `hotels` ( `nomH`, `categorie`, `adresse`, `email`, `telH`, `equipement`) VALUES"
+        String req = "INSERT INTO `hotels` ( `nomH`, `categorie`, `adresse`, `email`, `telH`, `equipement` , `image`) VALUES"
                 + " ('" + h.getNomH() + "', '" + h.getCategorie() + "', '" + h.getAdresse() + "', '" + h.getEmail()
-                + "', '" + h.getTelH() + "', '" + h.getEquipement() + "');";
+                + "', '" + h.getTelH() + "', '" + h.getEquipement() + "','" + h.getImage() + "');";
         stm = connexion.createStatement();
         stm.executeUpdate(req);
 
@@ -51,19 +51,22 @@ public class HotelService implements service<Hotels> {
 
         while (rst.next()) {
             Hotels h = new Hotels(rst.getInt("idH"),
+                    rst.getInt("id_contactH"),
                     rst.getString("nomH"),
                     rst.getString("categorie"),
                     rst.getString("adresse"),
                     rst.getString("email"),
                     rst.getInt("telH"),
-                    rst.getString("equipement"));
+                    rst.getString("equipement"),
+                    rst.getString("image"));
             hotels.add(h);
         }
         return hotels;
     }
-    public List<Hotels> afficherid(int id ) throws SQLException {
+
+    public List<Hotels> afficherid(int id) throws SQLException {
         List<Hotels> hotels = new ArrayList<>();
-        String req = "select * from hotels where idH = 40";
+        String req = "select * from hotels where id_contactH = " + id;
         stm = connexion.createStatement();
         //ensemble de resultat
         ResultSet rst = stm.executeQuery(req);
@@ -75,7 +78,8 @@ public class HotelService implements service<Hotels> {
                     rst.getString("adresse"),
                     rst.getString("email"),
                     rst.getInt("telH"),
-                    rst.getString("equipement"));
+                    rst.getString("equipement"),
+                    rst.getString("image"));
             hotels.add(h);
         }
         return hotels;
@@ -90,7 +94,7 @@ public class HotelService implements service<Hotels> {
                     + "' WHERE idH =" + id;
             PreparedStatement pre = connexion.prepareStatement(req);
             pre.executeUpdate();
-            
+
             System.out.println("hotel Modifiée");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -98,7 +102,6 @@ public class HotelService implements service<Hotels> {
         return h;
     }
 
-   
     @Override
     public void supprimer(int id) throws SQLException {
         String req = "DELETE FROM hotels WHERE  idH=" + id;

@@ -32,6 +32,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -62,13 +63,15 @@ public class AfficheController implements Initializable {
     @FXML
     private TableColumn<Hotels, String> equipment;
     @FXML
+    private TableColumn<Hotels, String> image;
+    @FXML
     private Button add;
     @FXML
     private Button delete;
 
     private ObservableList<Hotels> userData = FXCollections.observableArrayList();
     HotelService hs = new HotelService();
-
+    
     /**
      * Initializes the controller class.
      */
@@ -101,6 +104,9 @@ public class AfficheController implements Initializable {
             );
             equipment.setCellValueFactory(
                     new PropertyValueFactory<>("equipement")
+            );
+            image.setCellValueFactory(
+                    new PropertyValueFactory<>("image")
             );
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

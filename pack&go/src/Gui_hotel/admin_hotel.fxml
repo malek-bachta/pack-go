@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="699.0" prefWidth="1099.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Gui_hotel.Admin_hotelController">
+   <children>
+      <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane layoutX="8.0" prefHeight="165.0" prefWidth="1099.0" styleClass="side_anchor" stylesheets="@fxml.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <HBox layoutX="143.0" layoutY="241.0" prefHeight="409.0" prefWidth="859.0">
+         <children>
+            <ScrollPane fx:id="scrollHotel" prefHeight="409.0" prefWidth="868.0">
+               <content>
+                  <GridPane fx:id="gridHotel" prefHeight="87.0" prefWidth="153.0">
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+      <AnchorPane layoutX="426.0" layoutY="168.0" prefHeight="66.0" prefWidth="309.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="-2.0" prefHeight="74.0" prefWidth="317.0">
+               <children>
+                  <TextField fx:id="search_bar" alignment="CENTER" prefHeight="36.0" prefWidth="216.0" />
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#Search" prefHeight="37.0" prefWidth="95.0" styleClass="other_button" stylesheets="@fxml.css" text="Search">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

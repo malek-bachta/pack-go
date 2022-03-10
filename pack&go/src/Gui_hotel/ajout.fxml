@@ -24,7 +24,7 @@
             <TextField fx:id="email" layoutX="485.0" layoutY="359.0" onAction="#verif_mail" prefHeight="38.0" prefWidth="308.0" promptText="E-mail" />
             <TextField fx:id="telH" layoutX="489.0" layoutY="407.0" onAction="#verif_phone" prefHeight="38.0" prefWidth="308.0" promptText="Phone Number" />
             <TextField fx:id="equipement" layoutX="489.0" layoutY="457.0" prefHeight="38.0" prefWidth="308.0" promptText="Equipments" />
-            <Button fx:id="add" layoutX="569.0" layoutY="535.0" mnemonicParsing="false" onAction="#add_persom" prefHeight="49.0" prefWidth="141.0" styleClass="button_add" text="Add Hotel" textFill="#002366">
+            <Button fx:id="add" layoutX="569.0" layoutY="585.0" mnemonicParsing="false" onAction="#add_persom" prefHeight="49.0" prefWidth="141.0" styleClass="button_add" text="Add Hotel" textFill="#002366">
                <font>
                   <Font size="16.0" />
                </font>
@@ -77,6 +77,7 @@
             </ImageView>
             <Rating fx:id="rate" layoutX="866.0" layoutY="503.0" rating="0.0" />
             <Button fx:id="subb" layoutX="947.0" layoutY="560.0" mnemonicParsing="false" onAction="#subb" text="Button" />
+            <Button fx:id="uploadImage" layoutX="489.0" layoutY="510.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="38.0" prefWidth="173.0" text="Import Image " />
          </children>
       </AnchorPane>
    </children>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="273.0" prefWidth="264.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_hotel.Item_hotelController">
+   <children>
+      <VBox alignment="CENTER" layoutX="32.0" layoutY="-35.0" prefHeight="308.0" prefWidth="264.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="51.0" prefWidth="264.0">
+               <children>
+                  <Label fx:id="name" alignment="CENTER" prefHeight="64.0" prefWidth="95.0" text="hname" />
+                  <Label fx:id="cat" alignment="CENTER" prefHeight="65.0" prefWidth="95.0" text="categ" />
+                  <Label fx:id="equ" alignment="CENTER" prefHeight="65.0" prefWidth="88.0" text="equipe" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="adr" text="adress" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="photo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Utils/micro.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="details" mnemonicParsing="false" onAction="#details" prefHeight="53.0" prefWidth="107.0" styleClass="other_button" stylesheets="@fxml.css" text="Details">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <HBox prefHeight="53.0" prefWidth="64.0" />
+                  <Button fx:id="hire" mnemonicParsing="false" onAction="#hire" prefHeight="53.0" prefWidth="102.0" styleClass="other_button" stylesheets="@fxml.css" text="Hire">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets left="40.0" right="40.0" />
+               </opaqueInsets>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

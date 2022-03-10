@@ -5,11 +5,14 @@
         <group>
             <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_serviceh/ModifyServiceController.java</file>
             <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Services_hotel/HotelService.java</file>
-            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Entities_serviceh/Services.java</file>
-            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_hotel/ajout.fxml</file>
-            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_serviceh/ModifyService.fxml</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_hotel/affiche_adminH.fxml</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_hotel/AjoutController.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_hotel/Item_hotelController.java</file>
             <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_serviceh/AddServiceController.java</file>
-            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_serviceh/fxml.css</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Service_serviceh/Serviceservice.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_hotel/test.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_hotel/Affiche_adminHController.java</file>
+            <file>file:/C:/Users/mbach/Documents/GitHub/pack-go/pack&amp;go/src/Gui_hotel/Admin_hotelController.java</file>
         </group>
     </open-files>
 </project-private>

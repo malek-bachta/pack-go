@@ -12,12 +12,14 @@ package Entities_hotel;
 public class Hotels {
 
     private int idH;
+    private int id_contactH;
     private String nomH;
     String categorie;
     String adresse;
     String email;
     int telH;
     String equipement;
+    String image;
 
     public Hotels() {
     }
@@ -27,10 +29,9 @@ public class Hotels {
         this.equipement = equipement;
     }
 
-  
-
-    public Hotels(int idH, String nomH, String categorie, String adresse, String email, int telH, String equipement) {
+    public Hotels(int idH, int id_contactH, String nomH, String categorie, String adresse, String email, int telH, String equipement) {
         this.idH = idH;
+        this.id_contactH = id_contactH;
         this.telH = telH;
         this.nomH = nomH;
         this.categorie = categorie;
@@ -39,16 +40,66 @@ public class Hotels {
         this.adresse = adresse;
     }
 
-    public Hotels(String nomH, String categorie, String adresse, String email, int telH, String equipement) {
+    public Hotels(int id_contactH, String nomH, String categorie, String adresse, String email, int telH, String equipement) {
+        this.id_contactH = id_contactH;
         this.telH = telH;
-        this.adresse =adresse;
+        this.adresse = adresse;
         this.nomH = nomH;
         this.categorie = categorie;
         this.email = email;
         this.equipement = equipement;
     }
 
+    public Hotels(String nomH, String categorie, String adresse, String email, int telH, String equipement, String image) {
+        this.nomH = nomH;
+        this.categorie = categorie;
+        this.adresse = adresse;
+        this.email = email;
+        this.telH = telH;
+        this.equipement = equipement;
+        this.image = image;
+    }
+
     
+    public Hotels(int idH, int id_contactH, String nomH, String categorie, String adresse, String email, int telH, String equipement, String image) {
+        this.idH = idH;
+        this.id_contactH = id_contactH;
+        this.nomH = nomH;
+        this.categorie = categorie;
+        this.adresse = adresse;
+        this.email = email;
+        this.telH = telH;
+        this.equipement = equipement;
+        this.image = image;
+    }
+
+    public Hotels(int idH, String nomH, String categorie, String adresse, String email, int telH, String equipement, String image) {
+        this.idH = idH;
+        this.nomH = nomH;
+        this.categorie = categorie;
+        this.adresse = adresse;
+        this.email = email;
+        this.telH = telH;
+        this.equipement = equipement;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    
+    public int getId_contactH() {
+        return id_contactH;
+    }
+
+    public void setId_contactH(int id_contactH) {
+        this.id_contactH = id_contactH;
+    }
 
     public String getAdresse() {
         return adresse;
