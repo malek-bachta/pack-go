@@ -3,9 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_pack/Pack_itemController.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/calendar/calendarController.java</file>
             <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_pack/Front_packsController.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_pack/packs.fxml</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_pack/PacksController.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_offre/ModifierEtSuppOffreController.java</file>
             <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_pack/Modifier_packController.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/test/NewClass.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Entities_offre/offre.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_pack/Pack_itemController.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/pack/go/PackGo.java</file>
+            <file>file:/C:/xampp/htdocs/pack-go/pack&amp;go/src/Gui_pack/afficherpack.fxml</file>
         </group>
     </open-files>
 </project-private>

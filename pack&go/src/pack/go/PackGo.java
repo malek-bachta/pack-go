@@ -21,7 +21,7 @@ public class PackGo extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/Gui_offre/offre.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Gui_offre/offre.fxml"));//pack/front_packs
 
             Scene scene = new Scene(root);
 
