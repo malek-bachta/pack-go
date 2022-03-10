@@ -9,8 +9,6 @@ import Service_guide.GuideService;
 
 import Entities_transport.Transport;
 import Service_transport.TransportService;
-import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;

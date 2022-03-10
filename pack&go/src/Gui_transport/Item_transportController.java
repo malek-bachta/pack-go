@@ -5,21 +5,27 @@
  */
 package Gui_transport;
 
+
+
 import Entities_transport.Transport;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
-
+import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
  * @author Soulaima ben romdhan
  */
 public class Item_transportController implements Initializable {
-private Transport transport;
     @FXML
     private Label typ;
     @FXML
@@ -28,13 +34,18 @@ private Transport transport;
     private Label prix;
     @FXML
     private Label dest;
+    @FXML
+    private Label duree;
+    private Transport Transport;
     
     public void setData(Transport t) {
 
-        this.transport = t;
+        this.Transport = t;
         typ.setText(t.getType());
         nom.setText(t.getNomagence());
-      prix.setText("" +t.getPrix());
+        prix.setText("" +t.getPrix());
+              duree.setText(t.getDuree());
+
         dest.setText(t.getDestination());
     }
     /**

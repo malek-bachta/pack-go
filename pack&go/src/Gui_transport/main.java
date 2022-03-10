@@ -10,6 +10,7 @@ import Service_guide.GuideService;
 import Entities_guide.Guide;
 import Service_guide.GuideService;
 import java.io.IOException;
+import static java.text.NumberFormat.Field.CURRENCY;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
@@ -27,12 +28,14 @@ import javafx.stage.Stage;
  */
 public class main extends Application {
 
+    public static float CURRENCY;
+    
     @Override
     public void start(Stage primaryStage) {
 
         try {
 
-            Parent root = FXMLLoader.load(getClass().getResource("front_transport.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Gui_guide/front_guide.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setTitle("ajouter");
             primaryStage.setScene(scene);

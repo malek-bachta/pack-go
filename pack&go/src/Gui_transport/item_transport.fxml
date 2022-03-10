@@ -3,11 +3,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="248.0" prefWidth="617.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_transport.Item_transportController">
+<AnchorPane id="AnchorPane" prefHeight="240.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui_transport.Item_transportController">
    <children>
-      <Label fx:id="typ" layoutX="291.0" layoutY="57.0" text="aa" />
-      <Label fx:id="nom" layoutX="282.0" layoutY="103.0" text="nom" />
-      <Label fx:id="prix" layoutX="282.0" layoutY="143.0" text="prix" />
+      <Label fx:id="typ" layoutX="287.0" layoutY="26.0" text="aa" />
+      <Label fx:id="nom" layoutX="280.0" layoutY="76.0" text="nom" />
+      <Label fx:id="prix" layoutX="283.0" layoutY="110.0" text="prix" />
       <Label fx:id="dest" layoutX="280.0" layoutY="182.0" text="destination" />
+      <Label fx:id="duree" layoutX="284.0" layoutY="149.0" text="duree" />
    </children>
 </AnchorPane>

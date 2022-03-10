@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="699.0" prefWidth="1099.0" style="-fx-background-color: #adbac5;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Gui_guide.Front_guideController">
+   <children>
+      <ScrollPane fx:id="scrol" layoutX="151.0" layoutY="231.0" prefHeight="281.0" prefWidth="797.0">
+         <content>
+            <GridPane fx:id="gridd" stylesheets="@fxml.css">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+      <VBox alignment="CENTER" layoutX="73.0" layoutY="26.0" prefHeight="177.0" prefWidth="954.0" styleClass="button_add" stylesheets="@fxml.css">
+         <children>
+            <Text fill="#000407" strokeType="OUTSIDE" strokeWidth="0.0" text="chose your guide">
+               <font>
+                  <Font name="Eras Demi ITC" size="47.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <ImageView fitHeight="222.0" fitWidth="260.0" layoutX="383.0" layoutY="574.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Utils/aabed.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="932.0" layoutY="653.0" prefHeight="49.0" prefWidth="173.0" text="Pack&amp;go@gmail.com" textFill="#5268e1">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
