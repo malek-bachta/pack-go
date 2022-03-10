@@ -6,8 +6,6 @@
 package Service_transport;
 
 import Entities_transport.Transport;
-import java.net.Authenticator;
-import java.net.PasswordAuthentication;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,16 +14,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
-import javax.mail.Message;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 
 import utils.MyDB;
 
@@ -259,47 +253,5 @@ public class TransportService implements Itransport<Transport> {
     
         
    
-    public static void sendMail(String recepient) throws Exception {
-        System.out.println("preparing to send email");
-
-        Properties properties = new Properties();
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.starttls.enable", "true");
-        properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp.port", "587");
-
-        String myAccountEmail = "xxxxx@gmail.com";
-        String myAccountPassword = "xxxxx";
-       
-        
-        Transport t = Transport.getInstance(properties, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(myAccountEmail, myAccountPassword);
-            }
-        });
-
-       message message = prepareMessageBlock(Transport, myAccountEmail,recepient );
-       Transport.send(message);
-        System.out.println("message sent successfully");
-    }
-
-    private static Message prepareMessageBlock(session session, String myAccountEmail) {
-
-        try {
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(myAccountEmail));
-            message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
-            message.setSubject("my first email");
-            message.setText("hey there,\n look my email");
-            return message;
-
-        } catch (Exception ex) {
-            Logger.getLogger(mail.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-
-    }
-}
 
 }
