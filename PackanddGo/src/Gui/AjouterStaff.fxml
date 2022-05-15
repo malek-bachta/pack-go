@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="689.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AjouterStaff">
+   <children>
+      <TextField fx:id="nom" layoutX="246.0" layoutY="116.0" prefHeight="25.0" prefWidth="191.0" />
+      <Label layoutX="116.0" layoutY="121.0" text="Nom :" />
+      <Label layoutX="112.0" layoutY="180.0" text="Prenom" />
+      <Label layoutX="113.0" layoutY="456.0" text="Mot de Passe" />
+      <Label layoutX="112.0" layoutY="400.0" text="Num Passport" />
+      <Label layoutX="112.0" layoutY="230.0" text="Age" />
+      <Label layoutX="112.0" layoutY="277.0" text="Email" />
+      <Label layoutX="112.0" layoutY="341.0" text="Tel :" />
+      <TextField fx:id="prenom" layoutX="246.0" layoutY="175.0" prefHeight="25.0" prefWidth="191.0" />
+      <TextField fx:id="age" layoutX="246.0" layoutY="225.0" prefHeight="25.0" prefWidth="191.0" />
+      <TextField fx:id="email" layoutX="246.0" layoutY="283.0" prefHeight="25.0" prefWidth="191.0" />
+      <TextField fx:id="tel" layoutX="246.0" layoutY="336.0" prefHeight="25.0" prefWidth="191.0" />
+      <TextField fx:id="numpas" layoutX="246.0" layoutY="395.0" prefHeight="25.0" prefWidth="191.0" />
+      <PasswordField fx:id="mdp" layoutX="248.0" layoutY="451.0" prefHeight="25.0" prefWidth="187.0" />
+      <Button layoutX="418.0" layoutY="567.0" mnemonicParsing="false" onAction="#Enregistrer" styleClass="l" stylesheets="@fxml.css" text="Enregistrer" />
+      <ChoiceBox fx:id="role" layoutX="249.0" layoutY="507.0" prefHeight="31.0" prefWidth="187.0" />
+      <Label layoutX="122.0" layoutY="512.0" text="Role" />
+      <AnchorPane layoutX="899.0" prefHeight="689.0" prefWidth="200.0" styleClass="m" stylesheets="@fxml.css">
+         <children>
+            <Label layoutX="60.0" layoutY="41.0" text="Add Staff" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

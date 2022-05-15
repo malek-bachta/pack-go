@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.AddServiceController">
+  <stylesheets>
+        <URL value="@fxml.css" />
+    </stylesheets>
+    <children>
+      <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane id="AnchorPane" layoutX="5.0" layoutY="-4.0" prefHeight="689.0" prefWidth="1099.0">
+               <children>
+                  <TextField fx:id="formuleS" layoutX="485.0" layoutY="206.0" onAction="#verif_formule" prefHeight="38.0" prefWidth="308.0" promptText="Formule" />
+                  <TextField fx:id="sejourS" layoutX="485.0" layoutY="257.0" onAction="#verif_sejours" prefHeight="38.0" prefWidth="308.0" promptText="Sejours" />
+                  <TextField fx:id="priceS" layoutX="485.0" layoutY="306.0" onAction="#verif_prix" prefHeight="38.0" prefWidth="308.0" promptText="Price" />
+                  <TextField fx:id="activityS" layoutX="485.0" layoutY="359.0" onAction="#verif_activity" prefHeight="38.0" prefWidth="308.0" promptText="activity" />
+                  <Button fx:id="add" layoutX="569.0" layoutY="492.0" mnemonicParsing="false" onAction="#add_service" prefHeight="49.0" prefWidth="141.0" styleClass="button_add" stylesheets="@fxml.css" text="Add Service" textFill="#002366">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <AnchorPane layoutX="-11.0" layoutY="-9.0" prefHeight="705.0" prefWidth="279.0" style="-fx-background-color: #99b8ce; -fx-border-color: #231f20;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="154.0" fitWidth="154.0" layoutX="77.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Utils/37453%20%5BConverted%5D.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="show_service" layoutX="6.0" layoutY="250.0" mnemonicParsing="false" onAction="#show_service" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@../Gui_hotel/fxml.css" text="Show Services" textFill="#002366">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Button>
+                        <Button fx:id="modify" layoutX="6.0" layoutY="358.0" mnemonicParsing="false" onAction="#modify" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@../Gui_hotel/fxml.css" text="Modify Service" textFill="#002366">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Button>
+                        <Button fx:id="add_hotel" layoutX="6.0" layoutY="304.0" mnemonicParsing="false" onAction="#add_hotel" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@../Gui_hotel/fxml.css" text="Add Hotel" textFill="#002366">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Button>
+                     </children>
+                  </AnchorPane>
+                  <ImageView fitHeight="109.0" fitWidth="101.0" layoutX="581.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Utils/hotel.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="912.0" layoutY="633.0" prefHeight="49.0" prefWidth="173.0" text="Pack&amp;go@gmail.com">
+                     <font>
+                        <Font name="Arial" size="15.0" />
+                     </font>
+                  </Label>
+                  <Text fill="#002366" layoutX="393.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Formule" />
+                  <Text fill="#002366" layoutX="393.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activity" />
+                  <Text fill="#002366" layoutX="393.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
+                  <Text fill="#002366" layoutX="394.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stay" />
+                  <Text fill="#002366" layoutX="394.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disponibility" />
+                  <TextField fx:id="disponibility" layoutX="484.0" layoutY="412.0" onAction="#verif_disponibility" prefHeight="38.0" prefWidth="308.0" promptText="yes or no " />
+                  <Accordion layoutX="742.0" layoutY="516.0" />
+                  <ImageView fitHeight="31.0" fitWidth="118.0" layoutX="954.0" layoutY="26.0">
+                     <image>
+                        <Image url="@../Utils/title.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

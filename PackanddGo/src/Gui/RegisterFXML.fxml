@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="689.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegisterFXMLController">
+   <children>
+      <ImageView fitHeight="695.0" fitWidth="738.0">
+         <image>
+            <Image url="file:/C:/Users/msi/Desktop/Final/PackanddGo/src/Utils/pngwing.com%20(1).png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="nom" layoutX="239.0" layoutY="117.0" prefHeight="25.0" prefWidth="191.0" />
+      <Label layoutX="116.0" layoutY="121.0" text="Nom :" />
+      <Label layoutX="112.0" layoutY="180.0" text="Prenom" />
+      <Label layoutX="113.0" layoutY="456.0" text="Mot de Passe" />
+      <Label layoutX="112.0" layoutY="400.0" text="Num Passport" />
+      <Label layoutX="112.0" layoutY="230.0" text="Age" />
+      <Label layoutX="112.0" layoutY="277.0" text="Email" />
+      <Label layoutX="112.0" layoutY="341.0" text="Tel :" />
+      <TextField fx:id="prenom" layoutX="246.0" layoutY="175.0" prefHeight="25.0" prefWidth="191.0" />
+      <TextField fx:id="age" layoutX="246.0" layoutY="225.0" prefHeight="25.0" prefWidth="191.0" />
+      <TextField fx:id="email" layoutX="252.0" layoutY="283.0" prefHeight="25.0" prefWidth="191.0" />
+      <TextField fx:id="tel" layoutX="252.0" layoutY="336.0" prefHeight="25.0" prefWidth="191.0" />
+      <TextField fx:id="numpas" layoutX="252.0" layoutY="395.0" prefHeight="25.0" prefWidth="191.0" />
+      <PasswordField fx:id="mdp" layoutX="254.0" layoutY="451.0" />
+      <Button layoutX="422.0" layoutY="511.0" mnemonicParsing="false" onAction="#Enregistrer" styleClass="l" stylesheets="@fxml.css" text="Enregistrer" />
+      <AnchorPane layoutX="738.0" prefHeight="695.0" prefWidth="361.0" styleClass="m" stylesheets="@fxml.css">
+         <children>
+            <Label layoutX="150.0" layoutY="34.0" text="Register" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="68.0" fitWidth="200.0" layoutX="245.0" layoutY="23.0">
+         <image>
+            <Image url="file:/C:/Users/msi/Desktop/Final/PackanddGo/src/Utils/welcome.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

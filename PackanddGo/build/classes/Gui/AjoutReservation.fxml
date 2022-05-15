@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="577.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AjoutReservationController">
+   <children>
+      <AnchorPane layoutX="-3.0" prefHeight="689.0" prefWidth="1099.0">
+         <children>
+            <Label layoutX="431.0" layoutY="289.0" text="Date Début :" />
+            <Label layoutX="442.0" layoutY="375.0" text="Date Fin :" />
+            <Label layoutX="450.0" layoutY="444.0" text="Guide :" />
+            <DatePicker fx:id="dateD" layoutX="543.0" layoutY="284.0" />
+            <DatePicker fx:id="dateF" layoutX="543.0" layoutY="370.0" />
+            <ChoiceBox fx:id="guide" layoutX="543.0" layoutY="439.0" prefHeight="31.0" prefWidth="218.0" />
+            <Button fx:id="Ajouter" layoutX="761.0" layoutY="507.0" mnemonicParsing="false" onAction="#Ajouter" text="Save" />
+            <AnchorPane prefHeight="186.0" prefWidth="1099.0" styleClass="m" stylesheets="@fxml.css">
+               <children>
+                  <Label layoutX="410.0" layoutY="78.0" text="Ajout Reservation Transport" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

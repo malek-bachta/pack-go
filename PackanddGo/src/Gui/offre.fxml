@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" layoutX="5.0" layoutY="-4.0" prefHeight="689.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.OffreController">
+   <stylesheets>
+        <URL value="@fxml.css" />
+    </stylesheets>
+    <children>
+      <Label layoutX="435.0" layoutY="195.0" text="budget" />
+      <TextField fx:id="tfbudget" layoutX="696.0" layoutY="190.0" />
+      <Label layoutX="423.0" layoutY="118.0" text="nom_offre:" />
+      <TextField fx:id="tfnom" layoutX="696.0" layoutY="113.0" onAction="#very_nom" />
+      <TextArea fx:id="listp" layoutX="354.0" layoutY="240.0" prefHeight="380.0" prefWidth="659.0" wrapText="true" />
+      <Text layoutX="533.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OFFRE">
+         <font>
+            <Font name="Candara" size="82.0" />
+         </font>
+      </Text>
+       <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="25.0" layoutY="14.0">
+         <image>
+            <Image url="@../../../../../../Users/MSI/Desktop/pi/logo.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="-11.0" layoutY="-9.0" prefHeight="705.0" prefWidth="279.0" styleClass="side_anchor" stylesheets="@fxml.css">
+         <children>
+            <Button layoutX="6.0" layoutY="250.0" mnemonicParsing="false" onAction="#afficheroffre" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@../../../../../../Users/MSI/Desktop/pi/fxml.css" text="afficher" />
+            <Button fx:id="updateoffre" layoutX="6.0" layoutY="298.0" mnemonicParsing="false" onAction="#gotoupdate" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@../../../../../../Users/MSI/Desktop/pi/fxml.css" text="go to update" />
+            <Button fx:id="packs" layoutX="6.0" layoutY="347.0" mnemonicParsing="false" onAction="#gotopacks" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@../../../../../../Users/MSI/Desktop/pi/fxml.css" text="go to packs" />
+            <Button fx:id="calendar" layoutX="6.0" layoutY="390.0" mnemonicParsing="false" onAction="#aff_calendar" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@../../../../../../Users/MSI/Desktop/pi/fxml.css" text="calendar" />
+            <Button fx:id="rout" layoutX="6.0" layoutY="439.0" mnemonicParsing="false" onAction="#rout" prefHeight="49.0" prefWidth="273.0" styleClass="other_button" stylesheets="@fxml.css" text="go back" />
+         </children>
+      </AnchorPane>
+      <Text layoutX="915.0" layoutY="645.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pack&amp;go@gmail.com" />
+      <Button fx:id="btnajouter" layoutX="915.0" layoutY="150.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="31.0" prefWidth="167.0" styleClass="button_add" stylesheets="@../../../../../../Users/MSI/Desktop/pi/fxml.css" text="ajouter" />
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="23.0" layoutY="12.0">
+         <image>
+            <Image url="file:/C:/Users/msi/Desktop/Final/PackanddGo/src/Utils/logo.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="ajout" layoutX="283.0" prefHeight="91.0" prefWidth="71.0" />
+      <ImageView fitHeight="58.0" fitWidth="187.0" layoutX="893.0" layoutY="17.0">
+         <image>
+            <Image url="@../Utils/275394391_350537970322676_7164695504554048342_n.png" />
+         </image>
+      </ImageView>   
+   </children>
+</AnchorPane>

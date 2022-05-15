@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="493.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AfficheReservationHotelController">
+   <children>
+      <AnchorPane layoutY="-3.0" prefHeight="689.0" prefWidth="1099.0">
+         <children>
+            <ImageView fitHeight="475.0" fitWidth="1099.0" layoutY="214.0">
+               <image>
+                  <Image url="file:/C:/Users/msi/Desktop/Final/PackanddGo/src/Utils/pngwing.com%20(1).png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="tabel" layoutX="255.0" layoutY="274.0" prefHeight="268.0" prefWidth="664.0" styleClass="x" stylesheets="@fxml.css">
+              <columns>
+                <TableColumn fx:id="dateD" prefWidth="146.0" text="Date Début " />
+                <TableColumn fx:id="dateF" prefWidth="120.0" text="Date Fin" />
+                  <TableColumn fx:id="guide" prefWidth="157.0" text="Hotel" />
+                  <TableColumn fx:id="transport" prefWidth="119.0" text="Service" />
+                  <TableColumn fx:id="etat" prefWidth="120.0" text="etat" />
+              </columns>
+            </TableView>
+            <Button layoutX="650.0" layoutY="581.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="54.0" prefWidth="120.0" styleClass="l" stylesheets="@fxml.css" text="Modify" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+            <Button layoutX="811.0" layoutY="581.0" mnemonicParsing="false" onAction="#Supprimer" prefHeight="54.0" prefWidth="120.0" styleClass="l" stylesheets="@fxml.css" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+            <TextField fx:id="rechercher" layoutX="83.0" layoutY="230.0" onAction="#rechercher" />
+            <AnchorPane layoutY="3.0" prefHeight="211.0" prefWidth="1099.0" styleClass="m" stylesheets="@fxml.css">
+               <children>
+                  <Label layoutX="417.0" layoutY="92.0" text="My Hotel Reservations" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="27.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="158.0" fitWidth="158.0" layoutX="886.0" layoutY="27.0">
+                     <image>
+                        <Image url="file:/C:/Users/msi/Desktop/Final/PackanddGo/src/Utils/Hotel.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="69.0" fitWidth="233.0" layoutX="29.0" layoutY="68.0">
+                     <image>
+                        <Image url="file:/C:/Users/msi/Desktop/Final/PackanddGo/src/Utils/275394391_350537970322676_7164695504554048342_n.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label layoutX="26.0" layoutY="235.0" text="Search:" />
+            <Button layoutX="497.0" layoutY="581.0" mnemonicParsing="false" onAction="#Payer" prefHeight="54.0" prefWidth="120.0" styleClass="l" stylesheets="@fxml.css" text="Payment" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="23.0" layoutY="305.0" mnemonicParsing="false" onAction="#back" prefHeight="54.0" prefWidth="120.0" styleClass="l" stylesheets="@fxml.css" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

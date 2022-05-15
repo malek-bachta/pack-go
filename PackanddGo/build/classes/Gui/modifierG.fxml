@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="699.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.ModifierGController">
+   <children>
+      <AnchorPane layoutX="-11.0" layoutY="-9.0" prefHeight="705.0" prefWidth="279.0" styleClass="side_anchor" stylesheets="@fxml.css">
+         <children>
+            <Button fx:id="back3" layoutX="6.0" layoutY="347.0" mnemonicParsing="false" onAction="#back3" prefHeight="49.0" prefWidth="279.0" styleClass="other_button" stylesheets="@fxml.css" text="return" />
+            <ImageView fitHeight="154.0" fitWidth="154.0" layoutX="64.0" layoutY="59.0">
+               <image>
+                  <Image url="file:/C:/Users/msi/Desktop/Final/PackanddGo/src/Utils/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="nom" layoutX="489.0" layoutY="206.0" prefHeight="38.0" prefWidth="308.0" />
+      <TextField fx:id="prenom" layoutX="489.0" layoutY="257.0" prefHeight="38.0" prefWidth="308.0" />
+      <TextField fx:id="type" layoutX="489.0" layoutY="306.0" prefHeight="38.0" prefWidth="308.0" />
+      <TextField fx:id="prix" layoutX="489.0" layoutY="359.0" prefHeight="38.0" prefWidth="308.0" />
+      <Text layoutX="370.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom" />
+      <Text layoutX="370.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prenom" />
+      <Text layoutX="370.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="type" />
+      <Text layoutX="370.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prix" />
+      <Button fx:id="modif" layoutX="569.0" layoutY="535.0" mnemonicParsing="false" onAction="#modif" prefHeight="49.0" prefWidth="141.0" styleClass="button_add" stylesheets="@fxml.css" text="modify" />
+      <Label layoutX="922.0" layoutY="643.0" prefHeight="49.0" prefWidth="173.0" text="Pack&amp;go@gmail.com">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="31.0" fitWidth="141.0" layoutX="968.0" layoutY="14.0">
+         <image>
+            <Image url="file:/C:/Users/msi/Desktop/Final/PackanddGo/src/Utils/275394391_350537970322676_7164695504554048342_n.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
