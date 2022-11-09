@@ -66,7 +66,7 @@ public class HotelService implements service<Hotels> {
 
     public List<Hotels> afficherid(int id) throws SQLException {
         List<Hotels> hotels = new ArrayList<>();
-        String req = "select * from hotels where id_contactH = " + id;
+        String req = "select * from hotels where id_contactH = 60";
         stm = connexion.createStatement();
         //ensemble de resultat
         ResultSet rst = stm.executeQuery(req);

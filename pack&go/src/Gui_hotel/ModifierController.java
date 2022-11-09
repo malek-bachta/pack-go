@@ -70,7 +70,7 @@ public class ModifierController implements Initializable {
         // TODO
         HotelService sp = new HotelService();
         try {
-            liste = sp.afficherid(0);
+            liste = sp.afficherid(60);
         } catch (SQLException ex) {
             Logger.getLogger(ModifierController.class.getName()).log(Level.SEVERE, null, ex);
         }
